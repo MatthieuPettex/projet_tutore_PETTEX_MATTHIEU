@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.11.8 on win32)" generated="2026-03-24T16:17:31.444522" rpa="false" schemaversion="5">
+<suite id="s1" name="ProjetFinalM2I" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I">
+<suite id="s1-s1" name="Code" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\Code">
+<suite id="s1-s1-s1" name="Tests" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\Code\tests">
+<suite id="s1-s1-s1-s1" name="test orange HRM" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\Code\tests\test_orange_HRM.robot">
+<kw name="Open Website" owner="loginPage" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-24T16:17:31.731586" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-24T16:17:31.731586" elapsed="3.386119"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-24T16:17:35.117705" elapsed="0.031006"/>
+</kw>
+<doc>Ouvre le navigateur et se rend sur le site OrangeHRM puis met la fenêtre en grand</doc>
+<status status="PASS" start="2026-03-24T16:17:31.730587" elapsed="3.418124"/>
+</kw>
+<test id="s1-s1-s1-s1-t1" name="Test Connexion Invalide" line="15">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2026-03-24T16:17:35.152712" level="INFO">Début du test</msg>
+<arg>Début du test</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-24T16:17:35.152712" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-24T16:17:35.152712" elapsed="0.627960"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-24T16:17:35.781672" level="INFO">Typing text 'userfail' into text field 'name=username'.</msg>
+<arg>name=username</arg>
+<arg>userfail</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T16:17:35.780672" elapsed="0.044010"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-24T16:17:35.824682" level="INFO">Typing text 'passwordfail' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>passwordfail</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T16:17:35.824682" elapsed="0.052011"/>
+</kw>
+<kw name="Login Click" owner="loginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-24T16:17:35.877694" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-24T16:17:35.877694" elapsed="0.046009"/>
+</kw>
+<doc>Clique sur le bouton pour se connecter</doc>
+<status status="PASS" start="2026-03-24T16:17:35.876693" elapsed="0.047010"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Invalid credentials</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-03-24T16:17:35.923703" elapsed="4.413322"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2026-03-24T16:17:40.337220" level="INFO">Fin du test</msg>
+<arg>Fin du test</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-24T16:17:40.337220" elapsed="0.000805"/>
+</kw>
+<doc>Vérifie qu'un login incorrect échoue</doc>
+<status status="PASS" start="2026-03-24T16:17:35.148711" elapsed="5.189314"/>
+</test>
+<kw name="Close Website" owner="loginPage" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-03-24T16:17:40.341582" elapsed="2.105890"/>
+</kw>
+<doc>Ferme le site OrangeHRM</doc>
+<status status="PASS" start="2026-03-24T16:17:40.341582" elapsed="2.105890"/>
+</kw>
+<status status="PASS" start="2026-03-24T16:17:31.499533" elapsed="10.947939"/>
+</suite>
+<status status="PASS" start="2026-03-24T16:17:31.495534" elapsed="10.955939"/>
+</suite>
+<status status="PASS" start="2026-03-24T16:17:31.486531" elapsed="10.966943"/>
+</suite>
+<status status="PASS" start="2026-03-24T16:17:31.458524" elapsed="10.996950"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="ProjetFinalM2I" id="s1" pass="1" fail="0" skip="0">ProjetFinalM2I</stat>
+<stat name="Code" id="s1-s1" pass="1" fail="0" skip="0">ProjetFinalM2I.Code</stat>
+<stat name="Tests" id="s1-s1-s1" pass="1" fail="0" skip="0">ProjetFinalM2I.Code.Tests</stat>
+<stat name="test orange HRM" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">ProjetFinalM2I.Code.Tests.test orange HRM</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
