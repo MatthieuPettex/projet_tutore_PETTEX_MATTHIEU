@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.11.8 on win32)" generated="2026-03-24T17:16:02.385781" rpa="false" schemaversion="5">
+<suite id="s1" name="test orange HRM" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX\code\tests\test_orange_HRM.robot">
+<kw name="Open Website" owner="loginPage" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-24T17:16:02.646319" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-24T17:16:02.646319" elapsed="27.675150"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<msg time="2026-03-24T17:16:30.324469" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=146.0.7680.154)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff75ac229c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff75a94a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff75a6adb2d]
+	chromedriver!(No symbol) [0x7ff75a684322]
+	chromedriver!(No symbol) [0x7ff75a736e86]
+	chromedriver!(No symbol) [0x7ff75a753482]
+	chromedriver!(No symbol) [0x7ff75a6f9298]
+	chromedriver!(No symbol) [0x7ff75a6fa183]
+	chromedriver!GetHandleVerifier [0x7ff75ac4de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff75ac48588+313348]
+	chromedriver!GetHandleVerifier [0x7ff75ac69d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff75a966785+31545]
+	chromedriver!GetHandleVerifier [0x7ff75a96facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff75a953634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff75a9537e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff75a937e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff971e87374+14]
+	ntdll!RtlUserThreadStart [0x7ff97367cc91+21]
+</msg>
+<msg time="2026-03-24T17:16:30.325470" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=146.0.7680.154)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff75ac229c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff75a94a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff75a6adb2d]
+	chromedriver!(No symbol) [0x7ff75a684322]
+	chromedriver!(No symbol) [0x7ff75a736e86]
+	chromedriver!(No symbol) [0x7ff75a753482]
+	chromedriver!(No symbol) [0x7ff75a6f9298]
+	chromedriver!(No symbol) [0x7ff75a6fa183]
+	chromedriver!GetHandleVerifier [0x7ff75ac4de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff75ac48588+313348]
+	chromedriver!GetHandleVerifier [0x7ff75ac69d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff75a966785+31545]
+	chromedriver!GetHandleVerifier [0x7ff75a96facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff75a953634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff75a9537e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff75a937e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff971e87374+14]
+	ntdll!RtlUserThreadStart [0x7ff97367cc91+21]
+</msg>
+<doc>Maximizes current browser window.</doc>
+<status status="FAIL" start="2026-03-24T17:16:30.321469" elapsed="0.041009">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=146.0.7680.154)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff75ac229c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff75a94a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff75a6adb2d]
+	chromedriver!(No symbol) [0x7ff75a684322]
+	chromedriver!(No symbol) [0x7ff75a736e86]
+	chromedriver!(No symbol) [0x7ff75a753482]
+	chromedriver!(No symbol) [0x7ff75a6f9298]
+	chromedriver!(No symbol) [0x7ff75a6fa183]
+	chromedriver!GetHandleVerifier [0x7ff75ac4de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff75ac48588+313348]
+	chromedriver!GetHandleVerifier [0x7ff75ac69d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff75a966785+31545]
+	chromedriver!GetHandleVerifier [0x7ff75a96facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff75a953634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff75a9537e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff75a937e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff971e87374+14]
+	ntdll!RtlUserThreadStart [0x7ff97367cc91+21]
+</status>
+</kw>
+<doc>Ouvre le navigateur et se rend sur le site OrangeHRM puis met la fenêtre en grand</doc>
+<status status="FAIL" start="2026-03-24T17:16:02.645308" elapsed="27.717170">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=146.0.7680.154)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff75ac229c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff75a94a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff75a6adb2d]
+	chromedriver!(No symbol) [0x7ff75a684322]
+	chromedriver!(No symbol) [0x7ff75a736e86]
+	chromedriver!(No symbol) [0x7ff75a753482]
+	chromedriver!(No symbol) [0x7ff75a6f9298]
+	chromedriver!(No symbol) [0x7ff75a6fa183]
+	chromedriver!GetHandleVerifier [0x7ff75ac4de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff75ac48588+313348]
+	chromedriver!GetHandleVerifier [0x7ff75ac69d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff75a966785+31545]
+	chromedriver!GetHandleVerifier [0x7ff75a96facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff75a953634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff75a9537e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff75a937e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff971e87374+14]
+	ntdll!RtlUserThreadStart [0x7ff97367cc91+21]
+</status>
+</kw>
+<test id="s1-t1" name="Test Connexion et Déconnexion" line="10">
+<doc>Vérifie connexion puis déconnexion utilisateur</doc>
+<status status="FAIL" start="2026-03-24T17:16:30.362478" elapsed="0.001000">Parent suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=146.0.7680.154)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff75ac229c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff75a94a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff75a6adb2d]
+	chromedriver!(No symbol) [0x7ff75a684322]
+	chromedriver!(No symbol) [0x7ff75a736e86]
+	chromedriver!(No symbol) [0x7ff75a753482]
+	chromedriver!(No symbol) [0x7ff75a6f9298]
+	chromedriver!(No symbol) [0x7ff75a6fa183]
+	chromedriver!GetHandleVerifier [0x7ff75ac4de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff75ac48588+313348]
+	chromedriver!GetHandleVerifier [0x7ff75ac69d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff75a966785+31545]
+	chromedriver!GetHandleVerifier [0x7ff75a96facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff75a953634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff75a9537e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff75a937e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff971e87374+14]
+	ntdll!RtlUserThreadStart [0x7ff97367cc91+21]
+</status>
+</test>
+<kw name="Close Website" owner="loginPage" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-03-24T17:16:30.365479" elapsed="2.098044"/>
+</kw>
+<doc>Ferme le site OrangeHRM</doc>
+<status status="PASS" start="2026-03-24T17:16:30.364478" elapsed="2.099045"/>
+</kw>
+<status status="FAIL" start="2026-03-24T17:16:02.386781" elapsed="30.076742">Suite setup failed:
+NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=146.0.7680.154)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff75ac229c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff75a94a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff75a6adb2d]
+	chromedriver!(No symbol) [0x7ff75a684322]
+	chromedriver!(No symbol) [0x7ff75a736e86]
+	chromedriver!(No symbol) [0x7ff75a753482]
+	chromedriver!(No symbol) [0x7ff75a6f9298]
+	chromedriver!(No symbol) [0x7ff75a6fa183]
+	chromedriver!GetHandleVerifier [0x7ff75ac4de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff75ac48588+313348]
+	chromedriver!GetHandleVerifier [0x7ff75ac69d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff75a966785+31545]
+	chromedriver!GetHandleVerifier [0x7ff75a96facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff75a953634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff75a9537e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff75a937e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff971e87374+14]
+	ntdll!RtlUserThreadStart [0x7ff97367cc91+21]
+</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="test orange HRM" id="s1" pass="0" fail="1" skip="0">test orange HRM</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-03-24T17:16:30.324469" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=146.0.7680.154)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff75ac229c5+2ed785]
+	chromedriver!GetHandleVerifier [0x7ff75a94a0d0+14e90]
+	chromedriver!(No symbol) [0x7ff75a6adb2d]
+	chromedriver!(No symbol) [0x7ff75a684322]
+	chromedriver!(No symbol) [0x7ff75a736e86]
+	chromedriver!(No symbol) [0x7ff75a753482]
+	chromedriver!(No symbol) [0x7ff75a6f9298]
+	chromedriver!(No symbol) [0x7ff75a6fa183]
+	chromedriver!GetHandleVerifier [0x7ff75ac4de0d+318bcd]
+	chromedriver!GetHandleVerifier [0x7ff75ac48588+313348]
+	chromedriver!GetHandleVerifier [0x7ff75ac69d7a+334b3a]
+	chromedriver!GetHandleVerifier [0x7ff75a966785+31545]
+	chromedriver!GetHandleVerifier [0x7ff75a96facc+3a88c]
+	chromedriver!GetHandleVerifier [0x7ff75a953634+1e3f4]
+	chromedriver!GetHandleVerifier [0x7ff75a9537e6+1e5a6]
+	chromedriver!GetHandleVerifier [0x7ff75a937e37+2bf7]
+	KERNEL32!BaseThreadInitThunk [0x7ff971e87374+14]
+	ntdll!RtlUserThreadStart [0x7ff97367cc91+21]
+</msg>
+</errors>
+</robot>
