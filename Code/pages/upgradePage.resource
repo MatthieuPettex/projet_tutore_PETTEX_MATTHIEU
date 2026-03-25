@@ -12,8 +12,13 @@ Upgrade Page Access
 Fill Form
     [Documentation]    Remplit les 7 champs du formulaire Upgrade.
     # Ferme le pop up
-    Wait Until Element Is Visible    xpath=//button[contains(@class,'close')]    10s
-    Click Element    xpath=//button[contains(@class,'close')]
+    Wait Until Element Is Visible    xpath=//iframe    10s
+    Select Frame    xpath=//iframe
+
+    Wait Until Element Is Visible    xpath=//button    10s
+    Click Element    xpath=//button
+
+    Unselect Frame
 
     # Complète en envoie le formulaire
     Wait Until Element Is Visible    xpath=//input[contains(@name,'firstname')]    15s
