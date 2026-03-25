@@ -20,7 +20,7 @@ Verify About Popup Display
 
 Close About Popup
     [Documentation]    Ferme la popup About.
-    Click Element    xpath=//button[@type='button']
+    Click Element    xpath=//div[@role='dialog']//button[contains(@class,'close')]
 
 Access Support
     [Documentation]    Clique sur l'option "Support" dans le menu utilisateur.
@@ -42,14 +42,10 @@ Password Change
     [Documentation]    Change le mot de passe utilisateur avec un nouveau mot de passe fourni.
     Access Password Change
     Wait Until Element Is Visible    xpath=//input[@type='password']    10s
-    Input Text    xpath=//label[contains()='Current Password']/following::input[1]    ${PASSWORD}
-    Input Text    xpath=//label[contains()='New Password']/following::input[1]        ${NEW_PASSWORD}
-    Input Text    xpath=//label[contains()='Confirm Password']/following::input[1]    ${NEW_PASSWORD}
+    Input Text    xpath=(//input[@type='password'])[1]    ${PASSWORD}
+    Input Text    xpath=(//input[@type='password'])[2]    ${NEW_PASSWORD}
+    Input Text    xpath=(//input[@type='password'])[3]    ${NEW_PASSWORD}
     Click Button    xpath=//button[@type='submit']
-
-Verify Password Change
-    [Documentation]    Vérifie que la page de changement de mot de passe est affichée.
-    Wait Until Page Contains    Change Password    10s
 
 Log Out
     [Documentation]    Permet de se déconnecter de l'application OrangeHRM.

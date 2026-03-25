@@ -1,349 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.11.8 on win32)" generated="2026-03-25T11:51:47.385584" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.11.8 on win32)" generated="2026-03-25T16:42:42.349911" rpa="false" schemaversion="5">
 <suite id="s1" name="projet tutore MATTHIEU PETTEX" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX">
 <suite id="s1-s1" name="Code" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX\Code">
 <suite id="s1-s1-s1" name="Tests" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX\Code\tests">
 <suite id="s1-s1-s1-s1" name="test orange HRM" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX\Code\tests\test_orange_HRM.robot">
 <kw name="Open Website" owner="loginPage" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-03-25T11:51:47.650643" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2026-03-25T16:42:42.637941" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-03-25T11:51:47.650643" elapsed="7.118263"/>
+<status status="PASS" start="2026-03-25T16:42:42.637941" elapsed="3.298009"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-03-25T11:51:54.768906" elapsed="0.021855"/>
+<status status="PASS" start="2026-03-25T16:42:45.936951" elapsed="0.020005"/>
 </kw>
 <doc>Ouvre le navigateur et se rend sur le site OrangeHRM puis met la fenêtre en grand</doc>
-<status status="PASS" start="2026-03-25T11:51:47.649643" elapsed="7.141118"/>
+<status status="PASS" start="2026-03-25T16:42:42.636941" elapsed="3.320015"/>
 </kw>
-<test id="s1-s1-s1-s1-t1" name="Test Reconnexion Avec Nouveau Mot De Passe Echoue" line="26">
+<test id="s1-s1-s1-s1-t1" name="Test Upgrade" line="50">
 <kw name="Log" owner="BuiltIn" type="SETUP">
-<msg time="2026-03-25T11:51:54.794762" level="INFO">Début du test</msg>
+<msg time="2026-03-25T16:42:45.960956" level="INFO">Début du test</msg>
 <arg>Début du test</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-03-25T11:51:54.794762" elapsed="0.001001"/>
+<status status="PASS" start="2026-03-25T16:42:45.960956" elapsed="0.000000"/>
 </kw>
 <kw name="Log In" owner="loginPage">
 <kw name="Load User Data" owner="loginPage">
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2026-03-25T11:51:54.796762" level="INFO">${json} = {'username': 'Admin', 'password': 'admin123'}</msg>
+<msg time="2026-03-25T16:42:45.962956" level="INFO">${json} = {'username': 'Admin', 'password': 'admin123'}</msg>
 <var>${json}</var>
 <arg>C:\\Users\\matpe\\AppData\\Local\\ProjetFinalM2I\\projet_tutore_MATTHIEU_PETTEX\\Code\\pages/../data/users.json</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2026-03-25T11:51:54.796762" elapsed="0.000000"/>
+<status status="PASS" start="2026-03-25T16:42:45.961957" elapsed="0.000999"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2026-03-25T11:51:54.811766" level="INFO">${username} = ['Admin']</msg>
+<msg time="2026-03-25T16:42:45.977960" level="INFO">${username} = ['Admin']</msg>
 <var>${username}</var>
 <arg>${json}</arg>
 <arg>$.username</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2026-03-25T11:51:54.796762" elapsed="0.016004"/>
+<status status="PASS" start="2026-03-25T16:42:45.962956" elapsed="0.015004"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2026-03-25T11:51:54.825770" level="INFO">${password} = ['admin123']</msg>
+<msg time="2026-03-25T16:42:45.990962" level="INFO">${password} = ['admin123']</msg>
 <var>${password}</var>
 <arg>${json}</arg>
 <arg>$.password</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2026-03-25T11:51:54.812766" elapsed="0.013004"/>
+<status status="PASS" start="2026-03-25T16:42:45.978960" elapsed="0.012002"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-25T11:51:54.826770" level="INFO">${USERNAME} = Admin</msg>
+<msg time="2026-03-25T16:42:45.991963" level="INFO">${USERNAME} = Admin</msg>
 <arg>${USERNAME}</arg>
 <arg>${username[0]}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-25T11:51:54.825770" elapsed="0.001000"/>
+<status status="PASS" start="2026-03-25T16:42:45.990962" elapsed="0.001001"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-25T11:51:54.827769" level="INFO">${PASSWORD} = admin123</msg>
+<msg time="2026-03-25T16:42:45.993963" level="INFO">${PASSWORD} = admin123</msg>
 <arg>${PASSWORD}</arg>
 <arg>${password[0]}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-25T11:51:54.826770" elapsed="0.000999"/>
+<status status="PASS" start="2026-03-25T16:42:45.992964" elapsed="0.000999"/>
 </kw>
 <doc>Charge les données utilisateurs depuis users.json</doc>
-<status status="PASS" start="2026-03-25T11:51:54.795763" elapsed="0.032006"/>
+<status status="PASS" start="2026-03-25T16:42:45.961957" elapsed="0.032006"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>name=username</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-25T11:51:54.827769" elapsed="0.473776"/>
+<status status="PASS" start="2026-03-25T16:42:45.993963" elapsed="0.427228"/>
 </kw>
 <kw name="Username Input" owner="loginPage">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-25T11:51:55.302546" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<msg time="2026-03-25T16:42:46.422190" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
 <arg>name=username</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-25T11:51:55.302546" elapsed="0.043010"/>
+<status status="PASS" start="2026-03-25T16:42:46.422190" elapsed="0.044014"/>
 </kw>
 <doc>Insere le nom d'utilisateur dans le champ de connexion</doc>
-<status status="PASS" start="2026-03-25T11:51:55.301545" elapsed="0.044011"/>
+<status status="PASS" start="2026-03-25T16:42:46.421191" elapsed="0.045013"/>
 </kw>
 <kw name="Password Input" owner="loginPage">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-25T11:51:55.346557" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<msg time="2026-03-25T16:42:46.467203" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
 <arg>name=password</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-25T11:51:55.346557" elapsed="0.046009"/>
+<status status="PASS" start="2026-03-25T16:42:46.467203" elapsed="0.048640"/>
 </kw>
 <doc>Insere le mot de passe dans le champ de connexion</doc>
-<status status="PASS" start="2026-03-25T11:51:55.346557" elapsed="0.046009"/>
+<status status="PASS" start="2026-03-25T16:42:46.466204" elapsed="0.050639"/>
 </kw>
 <kw name="Login Click" owner="loginPage">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-03-25T11:51:55.393566" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<msg time="2026-03-25T16:42:46.517844" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
 <arg>xpath=//button[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-25T11:51:55.393566" elapsed="0.045010"/>
+<status status="PASS" start="2026-03-25T16:42:46.517844" elapsed="0.049299"/>
 </kw>
 <doc>Clique sur le bouton pour se connecter</doc>
-<status status="PASS" start="2026-03-25T11:51:55.393566" elapsed="0.045010"/>
+<status status="PASS" start="2026-03-25T16:42:46.516843" elapsed="0.050300"/>
 </kw>
 <doc>Execute les étapes de connexion</doc>
-<status status="PASS" start="2026-03-25T11:51:54.795763" elapsed="0.642813"/>
+<status status="PASS" start="2026-03-25T16:42:45.961957" elapsed="0.605186"/>
 </kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Dashboard</arg>
-<arg>10s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2026-03-25T11:51:55.439577" elapsed="3.007626"/>
-</kw>
-<kw name="Password Change" owner="userMenu">
-<kw name="Access Password Change" owner="userMenu">
-<kw name="Open User Menu" owner="userMenu">
+<kw name="Upgrade Page Access" owner="upgradePage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//p[@class='oxd-userdropdown-name']</arg>
+<arg>xpath=//a[contains(.,'Upgrade')]</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-25T11:51:58.448202" elapsed="0.010002"/>
+<status status="PASS" start="2026-03-25T16:42:46.568143" elapsed="1.790621"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-03-25T11:51:58.459205" level="INFO">Clicking element 'xpath=//p[@class='oxd-userdropdown-name']'.</msg>
-<arg>xpath=//p[@class='oxd-userdropdown-name']</arg>
+<msg time="2026-03-25T16:42:48.358764" level="INFO">Clicking element 'xpath=//a[contains(.,'Upgrade')]'.</msg>
+<arg>xpath=//a[contains(.,'Upgrade')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-25T11:51:58.459205" elapsed="0.035008"/>
+<status status="PASS" start="2026-03-25T16:42:48.358764" elapsed="0.055015"/>
 </kw>
-<doc>Ouvre le menu déroulant utilisateur en haut à droite de l'application.</doc>
-<status status="PASS" start="2026-03-25T11:51:58.448202" elapsed="0.046011"/>
+<doc>Accède à la page Upgrade depuis l'application.</doc>
+<status status="PASS" start="2026-03-25T16:42:46.567143" elapsed="1.846636"/>
 </kw>
+<kw name="Fill Form" owner="upgradePage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//a[text()='Change Password']</arg>
+<msg time="2026-03-25T16:42:58.687577" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-03-25T16:42:58.687577" level="FAIL">Element 'xpath=//button[contains(@class,'close')]' not visible after 10 seconds.</msg>
+<arg>xpath=//button[contains(@class,'close')]</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-25T11:51:58.494213" elapsed="0.220640"/>
+<status status="FAIL" start="2026-03-25T16:42:48.414780" elapsed="10.277797">Element 'xpath=//button[contains(@class,'close')]' not visible after 10 seconds.</status>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-03-25T11:51:58.715853" level="INFO">Clicking element 'xpath=//a[text()='Change Password']'.</msg>
-<arg>xpath=//a[text()='Change Password']</arg>
+<arg>xpath=//button[contains(@class,'close')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-25T11:51:58.715853" elapsed="1.750146"/>
-</kw>
-<doc>Clique sur l'option "Change Password" dans le menu utilisateur.</doc>
-<status status="PASS" start="2026-03-25T11:51:58.448202" elapsed="2.017797"/>
+<status status="NOT RUN" start="2026-03-25T16:42:58.693577" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//input[@type='password']</arg>
-<arg>10s</arg>
+<arg>xpath=//input[contains(@name,'firstname')]</arg>
+<arg>15s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-25T11:52:00.467000" elapsed="1.031882"/>
+<status status="NOT RUN" start="2026-03-25T16:42:58.693577" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-25T11:52:01.498882" level="INFO">Typing text 'admin123' into text field 'xpath=//label[contains()='Current Password']/following::input[1]'.</msg>
-<msg time="2026-03-25T11:52:01.595674" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-03-25T11:52:01.595674" level="FAIL">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //label[contains()='Current Password']/following::input[1] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//label[contains()='Current Password']/following::input[1]' is not a valid XPath expression.
-  (Session info: chrome=146.0.7680.154); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x7ff619a129c5+2ed785]
-	chromedriver!GetHandleVerifier [0x7ff61973a0d0+14e90]
-	chromedriver!(No symbol) [0x7ff61949db2d]
-	chromedriver!(No symbol) [0x7ff6194a5ab1]
-	chromedriver!(No symbol) [0x7ff6194a8bc5]
-	chromedriver!(No symbol) [0x7ff6194a8c8f]
-	chromedriver!(No symbol) [0x7ff6194f631e]
-	chromedriver!(No symbol) [0x7ff6194f6eac]
-	chromedriver!(No symbol) [0x7ff619547017]
-	chromedriver!(No symbol) [0x7ff619543b9b]
-	chromedriver!(No symbol) [0x7ff6194e9298]
-	chromedriver!(No symbol) [0x7ff6194ea183]
-	chromedriver!GetHandleVerifier [0x7ff619a3de0d+318bcd]
-	chromedriver!GetHandleVerifier [0x7ff619a38588+313348]
-	chromedriver!GetHandleVerifier [0x7ff619a59d7a+334b3a]
-	chromedriver!GetHandleVerifier [0x7ff619756785+31545]
-	chromedriver!GetHandleVerifier [0x7ff61975facc+3a88c]
-	chromedriver!GetHandleVerifier [0x7ff619743634+1e3f4]
-	chromedriver!GetHandleVerifier [0x7ff6197437e6+1e5a6]
-	chromedriver!GetHandleVerifier [0x7ff619727e37+2bf7]
-	KERNEL32!BaseThreadInitThunk [0x7ff971e87374+14]
-	ntdll!RtlUserThreadStart [0x7ff97367cc91+21]
-</msg>
-<arg>xpath=//label[contains()='Current Password']/following::input[1]</arg>
-<arg>${PASSWORD}</arg>
+<arg>xpath=//input[contains(@name,'firstname')]</arg>
+<arg>Matthieu</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="FAIL" start="2026-03-25T11:52:01.498882" elapsed="0.103793">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //label[contains()='Current Password']/following::input[1] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//label[contains()='Current Password']/following::input[1]' is not a valid XPath expression.
-  (Session info: chrome=146.0.7680.154); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x7ff619a129c5+2ed785]
-	chromedriver!GetHandleVerifier [0x7ff61973a0d0+14e90]
-	chromedriver!(No symbol) [0x7ff61949db2d]
-	chromedriver!(No symbol) [0x7ff6194a5ab1]
-	chromedriver!(No symbol) [0x7ff6194a8bc5]
-	chromedriver!(No symbol) [0x7ff6194a8c8f]
-	chromedriver!(No symbol) [0x7ff6194f631e]
-	chromedriver!(No symbol) [0x7ff6194f6eac]
-	chromedriver!(No symbol) [0x7ff619547017]
-	chromedriver!(No symbol) [0x7ff619543b9b]
-	chromedriver!(No symbol) [0x7ff6194e9298]
-	chromedriver!(No symbol) [0x7ff6194ea183]
-	chromedriver!GetHandleVerifier [0x7ff619a3de0d+318bcd]
-	chromedriver!GetHandleVerifier [0x7ff619a38588+313348]
-	chromedriver!GetHandleVerifier [0x7ff619a59d7a+334b3a]
-	chromedriver!GetHandleVerifier [0x7ff619756785+31545]
-	chromedriver!GetHandleVerifier [0x7ff61975facc+3a88c]
-	chromedriver!GetHandleVerifier [0x7ff619743634+1e3f4]
-	chromedriver!GetHandleVerifier [0x7ff6197437e6+1e5a6]
-	chromedriver!GetHandleVerifier [0x7ff619727e37+2bf7]
-	KERNEL32!BaseThreadInitThunk [0x7ff971e87374+14]
-	ntdll!RtlUserThreadStart [0x7ff97367cc91+21]
-</status>
+<status status="NOT RUN" start="2026-03-25T16:42:58.693577" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<arg>xpath=//label[contains()='New Password']/following::input[1]</arg>
-<arg>${NEW_PASSWORD}</arg>
+<arg>xpath=//input[contains(@name,'lastname')]</arg>
+<arg>Pettex</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-03-25T11:52:01.602675" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-03-25T16:42:58.694577" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<arg>xpath=//label[contains()='Confirm Password']/following::input[1]</arg>
-<arg>${NEW_PASSWORD}</arg>
+<arg>xpath=//input[contains(@name,'email')]</arg>
+<arg>test@gmail.com</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-03-25T11:52:01.602675" elapsed="0.000000"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<arg>xpath=//button[@type='submit']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-03-25T11:52:01.602675" elapsed="0.000000"/>
-</kw>
-<doc>Change le mot de passe utilisateur avec un nouveau mot de passe fourni.</doc>
-<status status="FAIL" start="2026-03-25T11:51:58.447203" elapsed="3.156473">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //label[contains()='Current Password']/following::input[1] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//label[contains()='Current Password']/following::input[1]' is not a valid XPath expression.
-  (Session info: chrome=146.0.7680.154); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x7ff619a129c5+2ed785]
-	chromedriver!GetHandleVerifier [0x7ff61973a0d0+14e90]
-	chromedriver!(No symbol) [0x7ff61949db2d]
-	chromedriver!(No symbol) [0x7ff6194a5ab1]
-	chromedriver!(No symbol) [0x7ff6194a8bc5]
-	chromedriver!(No symbol) [0x7ff6194a8c8f]
-	chromedriver!(No symbol) [0x7ff6194f631e]
-	chromedriver!(No symbol) [0x7ff6194f6eac]
-	chromedriver!(No symbol) [0x7ff619547017]
-	chromedriver!(No symbol) [0x7ff619543b9b]
-	chromedriver!(No symbol) [0x7ff6194e9298]
-	chromedriver!(No symbol) [0x7ff6194ea183]
-	chromedriver!GetHandleVerifier [0x7ff619a3de0d+318bcd]
-	chromedriver!GetHandleVerifier [0x7ff619a38588+313348]
-	chromedriver!GetHandleVerifier [0x7ff619a59d7a+334b3a]
-	chromedriver!GetHandleVerifier [0x7ff619756785+31545]
-	chromedriver!GetHandleVerifier [0x7ff61975facc+3a88c]
-	chromedriver!GetHandleVerifier [0x7ff619743634+1e3f4]
-	chromedriver!GetHandleVerifier [0x7ff6197437e6+1e5a6]
-	chromedriver!GetHandleVerifier [0x7ff619727e37+2bf7]
-	KERNEL32!BaseThreadInitThunk [0x7ff971e87374+14]
-	ntdll!RtlUserThreadStart [0x7ff97367cc91+21]
-</status>
-</kw>
-<kw name="Log Out" owner="userMenu">
-<doc>Permet de se déconnecter de l'application OrangeHRM.</doc>
-<status status="NOT RUN" start="2026-03-25T11:52:01.603676" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>name=username</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2026-03-25T11:52:01.603676" elapsed="0.001000"/>
+<status status="NOT RUN" start="2026-03-25T16:42:58.694577" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<arg>name=username</arg>
-<arg>${USERNAME}</arg>
+<arg>xpath=//input[contains(@name,'phone')]</arg>
+<arg>0700000000</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-03-25T11:52:01.604676" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-03-25T16:42:58.694577" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<arg>name=password</arg>
-<arg>${NEW_PASSWORD}</arg>
+<arg>xpath=//input[contains(@name,'company')]</arg>
+<arg>Sogeti</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-03-25T11:52:01.604676" elapsed="0.000000"/>
+<status status="NOT RUN" start="2026-03-25T16:42:58.694577" elapsed="0.000000"/>
 </kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<arg>xpath=//button[@type='submit']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-03-25T11:52:01.604676" elapsed="0.001001"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>xpath=//input[contains(@name,'jobtitle')]</arg>
+<arg>Ingénieur en test logiciel</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-25T16:42:58.694577" elapsed="0.001000"/>
 </kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Invalid credentials</arg>
-<arg>10s</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="NOT RUN" start="2026-03-25T11:52:01.605677" elapsed="0.000000"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>xpath=//textarea[contains(@name,'message')]</arg>
+<arg>Test automatisé Robot Framework</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-03-25T16:42:58.695577" elapsed="0.000000"/>
+</kw>
+<doc>Remplit les 7 champs du formulaire Upgrade.</doc>
+<status status="FAIL" start="2026-03-25T16:42:48.414780" elapsed="10.280797">Element 'xpath=//button[contains(@class,'close')]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Submit Form" owner="upgradePage">
+<doc>Soumet le formulaire Upgrade.</doc>
+<status status="NOT RUN" start="2026-03-25T16:42:58.695577" elapsed="0.001002"/>
+</kw>
+<kw name="Verify Submit" owner="upgradePage">
+<doc>Vérifie que la soumission a réussi (redirection ou message).</doc>
+<status status="NOT RUN" start="2026-03-25T16:42:58.696579" elapsed="0.000000"/>
 </kw>
 <kw name="Log" owner="BuiltIn" type="TEARDOWN">
-<msg time="2026-03-25T11:52:01.606676" level="INFO">Fin du test</msg>
+<msg time="2026-03-25T16:42:58.697578" level="INFO">Fin du test</msg>
 <arg>Fin du test</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-03-25T11:52:01.606676" elapsed="0.000000"/>
+<status status="PASS" start="2026-03-25T16:42:58.696579" elapsed="0.000999"/>
 </kw>
-<doc>Vérifie que la reconnexion avec le nouveau mot de passe échoue (comportement attendu du site de démo)</doc>
-<status status="FAIL" start="2026-03-25T11:51:54.790761" elapsed="6.815915">InvalidSelectorException: Message: invalid selector: Unable to locate an element with the xpath expression //label[contains()='Current Password']/following::input[1] because of the following error:
-SyntaxError: Failed to execute 'evaluate' on 'Document': The string '//label[contains()='Current Password']/following::input[1]' is not a valid XPath expression.
-  (Session info: chrome=146.0.7680.154); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidselectorexception
-Stacktrace:
-	chromedriver!GetHandleVerifier [0x7ff619a129c5+2ed785]
-	chromedriver!GetHandleVerifier [0x7ff61973a0d0+14e90]
-	chromedriver!(No symbol) [0x7ff61949db2d]
-	chromedriver!(No symbol) [0x7ff6194a5ab1]
-	chromedriver!(No symbol) [0x7ff6194a8bc5]
-	chromedriver!(No symbol) [0x7ff6194a8c8f]
-	chromedriver!(No symbol) [0x7ff6194f631e]
-	chromedriver!(No symbol) [0x7ff6194f6eac]
-	chromedriver!(No symbol) [0x7ff619547017]
-	chromedriver!(No symbol) [0x7ff619543b9b]
-	chromedriver!(No symbol) [0x7ff6194e9298]
-	chromedriver!(No symbol) [0x7ff6194ea183]
-	chromedriver!GetHandleVerifier [0x7ff619a3de0d+318bcd]
-	chromedriver!GetHandleVerifier [0x7ff619a38588+313348]
-	chromedriver!GetHandleVerifier [0x7ff619a59d7a+334b3a]
-	chromedriver!GetHandleVerifier [0x7ff619756785+31545]
-	chromedriver!GetHandleVerifier [0x7ff61975facc+3a88c]
-	chromedriver!GetHandleVerifier [0x7ff619743634+1e3f4]
-	chromedriver!GetHandleVerifier [0x7ff6197437e6+1e5a6]
-	chromedriver!GetHandleVerifier [0x7ff619727e37+2bf7]
-	KERNEL32!BaseThreadInitThunk [0x7ff971e87374+14]
-	ntdll!RtlUserThreadStart [0x7ff97367cc91+21]
-</status>
+<doc>Test de la foncionnalité upgrade du site.</doc>
+<status status="FAIL" start="2026-03-25T16:42:45.956956" elapsed="12.740622">Element 'xpath=//button[contains(@class,'close')]' not visible after 10 seconds.</status>
 </test>
 <kw name="Close Website" owner="loginPage" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-03-25T11:52:01.614678" elapsed="2.086665"/>
+<status status="PASS" start="2026-03-25T16:42:58.703580" elapsed="2.137139"/>
 </kw>
 <doc>Ferme le site OrangeHRM</doc>
-<status status="PASS" start="2026-03-25T11:52:01.614678" elapsed="2.086665"/>
+<status status="PASS" start="2026-03-25T16:42:58.703580" elapsed="2.137139"/>
 </kw>
-<status status="FAIL" start="2026-03-25T11:51:47.423592" elapsed="16.277751"/>
+<status status="FAIL" start="2026-03-25T16:42:42.390320" elapsed="18.450399"/>
 </suite>
-<status status="FAIL" start="2026-03-25T11:51:47.420591" elapsed="16.284754"/>
+<status status="FAIL" start="2026-03-25T16:42:42.387319" elapsed="18.457402"/>
 </suite>
-<status status="FAIL" start="2026-03-25T11:51:47.415591" elapsed="16.290755"/>
+<status status="FAIL" start="2026-03-25T16:42:42.384128" elapsed="18.462593"/>
 </suite>
-<status status="FAIL" start="2026-03-25T11:51:47.389583" elapsed="16.318764"/>
+<status status="FAIL" start="2026-03-25T16:42:42.354912" elapsed="18.493810"/>
 </suite>
 <statistics>
 <total>

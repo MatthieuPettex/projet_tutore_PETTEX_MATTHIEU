@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    JSONLibrary
+Resource    ../pages/userMenu.resource
 
 *** Variables ***
 ${URL}    https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
