@@ -4,6 +4,11 @@ Library    JSONLibrary
 
 *** Variables ***
 ${URL}    https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+${NEW_PASSWORD}    admin456
+
+${CURRENT_PASSWORD_FIELD}    xpath=//label[text()='Current Password']/following::input[1]
+${NEW_PASSWORD_FIELD}        xpath=//label[text()='New Password']/following::input[1]
+${CONFIRM_PASSWORD_FIELD}    xpath=//label[text()='Confirm Password']/following::input[1]
 
 *** Keywords ***
 Open Website
@@ -19,11 +24,9 @@ Load User Data
     Set Suite Variable    ${USERNAME}    ${username[0]}
     Set Suite Variable    ${PASSWORD}    ${password[0]}
 
-
 Username Input
     [Documentation]    Insere le nom d'utilisateur dans le champ de connexion
     Input Text    name=username    ${USERNAME}
-
 
 Password Input
     [Documentation]    Insere le mot de passe dans le champ de connexion
@@ -40,6 +43,17 @@ Log In
     Username Input
     Password Input
     Login Click
+
+New Log In
+    [Documentation]    Change le mot de passe utilisateur avec un nouveau mot de passe fourni.
+    Access Password Change
+    Wait Until Element Is Visible    ${CURRENT_PASSWORD_FIELD}    10s
+
+    Input Text    ${CURRENT_PASSWORD_FIELD}    ${PASSWORD}
+    Input Text    ${NEW_PASSWORD_FIELD}        ${NEW_PASSWORD}
+    Input Text    ${CONFIRM_PASSWORD_FIELD}    ${NEW_PASSWORD}
+
+    Click Button    xpath=//button[@type='submit']
 
 Close Website
     [Documentation]    Ferme le site OrangeHRM
