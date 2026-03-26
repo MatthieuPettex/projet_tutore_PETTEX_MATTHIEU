@@ -10,19 +10,16 @@ Test Teardown    Log    Fin du test
 
 *** Test Cases ***
 Test Reconnexion Avec Nouveau Mot De Passe Echoue
-    [Documentation]    Vérifie que la reconnexion avec le nouveau mot de passe échoue (comportement attendu du site de démo)
+    [Documentation]    Vérifie que la reconnexion avec le nouveau mot de passe échoue et test les fonctionnalités du menu utilisateur (comportement attendu du site de démo)
 
     # Connexion initiale
     Log In
+    
     Wait Until Page Contains    Dashboard    10s
 
     # Tests des différentes pages liées au menu utilisateur
-    About Click
-    Verify About Popup Display 
-    Close About Popup
-
-    Access Support
-    Verify Support Access
+    User Menu Full
+    
     # Changement du mot de passe
     Password Change
 

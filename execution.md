@@ -1,6 +1,6 @@
-# 📊 Rapport d’Exécution – Tests Automatisés OrangeHRM
+# Rapport d’Exécution – Tests Automatisés OrangeHRM
 
-## 🎯 Objectif
+## Objectif
 Présenter les résultats des tests automatisés exécutés avec Robot Framework.
 
 ---
@@ -13,5 +13,12 @@ Présenter les résultats des tests automatisés exécutés avec Robot Framework
 - Framework : Robot Framework
 - Outil : SeleniumLibrary
 - OS : Windows
+
+---
+
+Fichiers générés
+    log.html
+    report.html
+    output.xml
 
 ---

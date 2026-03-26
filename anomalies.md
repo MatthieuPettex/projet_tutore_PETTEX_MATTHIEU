@@ -1,28 +1,23 @@
----
+# Rapport d’Anomalies – OrangeHRM
 
-# 📄 2. `Anomalies.md` (rapport d’anomalie)
-
-```markdown
-# 🐞 Rapport d’Anomalies – OrangeHRM
-
-## 🎯 Objectif
+## Objectif
 Documenter les anomalies détectées lors des tests.
 
 ---
 
-## 🐛 Anomalie 1 – Changement de mot de passe non pris en compte
+## Anomalie 1 – Changement de mot de passe non pris en compte
 
-### 📌 ID
+### ID
 BUG-001
 
 ---
 
-### 📍 Description
+### Description
 Après modification du mot de passe, l’utilisateur ne peut pas se reconnecter avec le nouveau mot de passe.
 
 ---
 
-### 🔁 Étapes de reproduction
+### Étapes de reproduction
 
 1. Se connecter avec un utilisateur valide
 2. Accéder à "Change Password"
@@ -32,46 +27,46 @@ Après modification du mot de passe, l’utilisateur ne peut pas se reconnecter 
 
 ---
 
-### ❌ Résultat observé
+### Résultat observé
 - Message : "Invalid credentials"
 - Le nouveau mot de passe ne fonctionne pas
 
 ---
 
-### ✅ Résultat attendu
+### Résultat attendu
 - L’utilisateur doit pouvoir se reconnecter avec le nouveau mot de passe
 
 ---
 
-### 📊 Gravité
+### Gravité
 Moyenne
 
 ---
 
-### ⚠️ Priorité
+### Priorité
 Moyenne
 
 ---
 
-### 🧠 Analyse
+### Analyse
 - Le backend ne semble pas enregistrer les modifications
 - Comportement probablement lié à l’environnement de démonstration
 
 ---
 
-## 🐛 Anomalie 2 – Popup bloquant le formulaire Upgrade
+## Anomalie 2 – Popup bloquant le formulaire Upgrade
 
-### 📌 ID
+### ID
 BUG-002
 
 ---
 
-### 📍 Description
+### Description
 Un popup apparaît sur la page Upgrade et empêche l’interaction avec le formulaire.
 
 ---
 
-### 🔁 Étapes de reproduction
+### Étapes de reproduction
 
 1. Accéder à la page Upgrade
 2. Observer l’apparition d’un popup
@@ -79,61 +74,61 @@ Un popup apparaît sur la page Upgrade et empêche l’interaction avec le formu
 
 ---
 
-### ❌ Résultat observé
+### Résultat observé
 - Impossible de cliquer sur les champs
 
 ---
 
-### ✅ Résultat attendu
+### Résultat attendu
 - Le formulaire doit être directement accessible
 
 ---
 
-### 📊 Gravité
+### Gravité
 Faible
 
 ---
 
-### ⚠️ Priorité
+### Priorité
 Faible
 
 ---
 
-### 🧠 Analyse
+### Analyse
 - Popup marketing ou cookie
 - Nécessite une gestion dans les tests automatisés
 
 ---
 
-## 🐛 Anomalie 3 – Locators instables
+## Anomalie 3 – Locators instables
 
-### 📌 ID
+### ID
 BUG-003
 
 ---
 
-### 📍 Description
+### Description
 Certains éléments ne sont pas trouvés avec XPath.
 
 ---
 
-### ❌ Résultat observé
+### Résultat observé
 - Erreur "Element not found"
 
 ---
 
-### ✅ Résultat attendu
+### Résultat attendu
 - Tous les éléments doivent être accessibles
 
 ---
 
-### 🧠 Analyse
+### Analyse
 - Structure DOM dynamique
 - Utilisation de XPath trop stricts
 
 ---
 
-## 🧪 Conclusion
+## Conclusion
 
 Les anomalies identifiées sont principalement liées :
 - à l’environnement de démonstration
@@ -141,7 +136,7 @@ Les anomalies identifiées sont principalement liées :
 
 ---
 
-## 🚀 Recommandations
+## Recommandations
 
 - Utiliser des locators robustes
 - Ajouter des waits explicites

@@ -32,6 +32,14 @@ Verify Support Access
     [Documentation]    Vérifie que la page de support est ouverte (nouvel onglet ou redirection).
     Sleep    3s
 
+User Menu Full
+    [Documentation]    Permet de tester toutes les fonctionnalités du menu utilisateur.
+    About Click
+    Verify About Popup Display 
+    Close About Popup
+    Access Support
+    Verify Support Access
+
 Access Password Change
     [Documentation]    Clique sur l'option "Change Password" dans le menu utilisateur.
     Open User Menu
@@ -53,3 +61,7 @@ Log Out
     Wait Until Element Is Visible    xpath=//a[text()='Logout']    10s
     Click Element    xpath=//a[text()='Logout']
     Wait Until Page Contains Element    xpath=//input[@name='username']    10s
+
+
+    
+
