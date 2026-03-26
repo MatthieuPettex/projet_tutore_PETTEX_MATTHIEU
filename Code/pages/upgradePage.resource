@@ -11,12 +11,10 @@ Upgrade Page Access
 
 Fill Form
     [Documentation]    Remplit les 7 champs du formulaire Upgrade.
-    # Ferme le pop up
-    Wait Until Element Is Visible    xpath=//iframe    10s
-    Select Frame    xpath=//iframe
+    # Accepte les cookies
+    ${visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    id=onetrust-accept-btn-handler    5s
 
-    Wait Until Element Is Visible    xpath=//button    10s
-    Click Element    xpath=//button
+    Run Keyword If    ${visible}    Click Button    id=onetrust-accept-btn-handler
 
     Unselect Frame
 

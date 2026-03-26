@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.11.8 on win32)" generated="2026-03-26T21:02:30.125812" rpa="false" schemaversion="5">
+<suite id="s1" name="projet tutore MATTHIEU PETTEX" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX">
+<suite id="s1-s1" name="Code" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX\Code">
+<suite id="s1-s1-s1" name="Tests" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX\Code\tests">
+<suite id="s1-s1-s1-s1" name="test orange HRM" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX\Code\tests\test_orange_HRM.robot">
+<kw name="Open Website" owner="loginPage" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:30.398873" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-26T21:02:30.398873" elapsed="3.453156"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-26T21:02:33.852029" elapsed="0.026006"/>
+</kw>
+<doc>Ouvre le navigateur et se rend sur le site OrangeHRM puis met la fenêtre en grand</doc>
+<status status="PASS" start="2026-03-26T21:02:30.397874" elapsed="3.480161"/>
+</kw>
+<test id="s1-s1-s1-s1-t1" name="Test Recruitment" line="43">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2026-03-26T21:02:33.882036" level="INFO">Début du test</msg>
+<arg>Début du test</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-26T21:02:33.882036" elapsed="0.000000"/>
+</kw>
+<kw name="Log In" owner="loginPage">
+<kw name="Load User Data" owner="loginPage">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2026-03-26T21:02:33.884036" level="INFO">${json} = {'username': 'Admin', 'password': 'admin123'}</msg>
+<var>${json}</var>
+<arg>C:\\Users\\matpe\\AppData\\Local\\ProjetFinalM2I\\projet_tutore_MATTHIEU_PETTEX\\Code\\pages/../data/users.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2026-03-26T21:02:33.883036" elapsed="0.001000"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2026-03-26T21:02:33.899039" level="INFO">${username} = ['Admin']</msg>
+<var>${username}</var>
+<arg>${json}</arg>
+<arg>$.username</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2026-03-26T21:02:33.884036" elapsed="0.016003"/>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<msg time="2026-03-26T21:02:33.912045" level="INFO">${password} = ['admin123']</msg>
+<var>${password}</var>
+<arg>${json}</arg>
+<arg>$.password</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="PASS" start="2026-03-26T21:02:33.900039" elapsed="0.013006"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-03-26T21:02:33.914045" level="INFO">${USERNAME} = Admin</msg>
+<arg>${USERNAME}</arg>
+<arg>${username[0]}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-03-26T21:02:33.913045" elapsed="0.001000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-03-26T21:02:33.915045" level="INFO">${PASSWORD} = admin123</msg>
+<arg>${PASSWORD}</arg>
+<arg>${password[0]}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-03-26T21:02:33.914045" elapsed="0.001000"/>
+</kw>
+<doc>Charge les données utilisateurs depuis users.json</doc>
+<status status="PASS" start="2026-03-26T21:02:33.883036" elapsed="0.032009"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=username</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T21:02:33.915045" elapsed="0.424361"/>
+</kw>
+<kw name="Username Input" owner="loginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:34.340407" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<arg>name=username</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.340407" elapsed="0.046011"/>
+</kw>
+<doc>Insere le nom d'utilisateur dans le champ de connexion</doc>
+<status status="PASS" start="2026-03-26T21:02:34.339406" elapsed="0.047012"/>
+</kw>
+<kw name="Password Input" owner="loginPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:34.387418" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.387418" elapsed="0.046014"/>
+</kw>
+<doc>Insere le mot de passe dans le champ de connexion</doc>
+<status status="PASS" start="2026-03-26T21:02:34.386418" elapsed="0.047014"/>
+</kw>
+<kw name="Login Click" owner="loginPage">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:34.434432" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.434432" elapsed="0.050012"/>
+</kw>
+<doc>Clique sur le bouton pour se connecter</doc>
+<status status="PASS" start="2026-03-26T21:02:34.433432" elapsed="0.052012"/>
+</kw>
+<doc>Execute les étapes de connexion</doc>
+<status status="PASS" start="2026-03-26T21:02:33.883036" elapsed="0.602408"/>
+</kw>
+<kw name="Load Candidate Data" owner="recruitmentPage">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2026-03-26T21:02:34.486444" level="INFO">${json} = {'firstName': 'Johny', 'middleName': 'J', 'lastName': 'John', 'jobTitle': 'Junior Account Assistant', 'email': 'johny.john@example.com', 'contact': '0601020304', 'keywords': 'automation, selenium, rob...</msg>
+<var>${json}</var>
+<arg>C:\\Users\\matpe\\AppData\\Local\\ProjetFinalM2I\\projet_tutore_MATTHIEU_PETTEX\\Code\\pages/../data/recruitment.json</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.486444" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-03-26T21:02:34.487444" level="INFO">${CANDIDATE_FIRST_NAME} = Johny</msg>
+<arg>${CANDIDATE_FIRST_NAME}</arg>
+<arg>${json['firstName']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.486444" elapsed="0.002000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-03-26T21:02:34.489444" level="INFO">${CANDIDATE_MIDDLE_NAME} = J</msg>
+<arg>${CANDIDATE_MIDDLE_NAME}</arg>
+<arg>${json['middleName']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.488444" elapsed="0.001000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-03-26T21:02:34.490445" level="INFO">${CANDIDATE_LAST_NAME} = John</msg>
+<arg>${CANDIDATE_LAST_NAME}</arg>
+<arg>${json['lastName']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.489444" elapsed="0.001001"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-03-26T21:02:34.491445" level="INFO">${CANDIDATE_JOB_TITLE} = Junior Account Assistant</msg>
+<arg>${CANDIDATE_JOB_TITLE}</arg>
+<arg>${json['jobTitle']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.490445" elapsed="0.001000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-03-26T21:02:34.492445" level="INFO">${CANDIDATE_EMAIL} = johny.john@example.com</msg>
+<arg>${CANDIDATE_EMAIL}</arg>
+<arg>${json['email']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.491445" elapsed="0.001000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-03-26T21:02:34.494446" level="INFO">${CANDIDATE_CONTACT} = 0601020304</msg>
+<arg>${CANDIDATE_CONTACT}</arg>
+<arg>${json['contact']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.493446" elapsed="0.001000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-03-26T21:02:34.495446" level="INFO">${CANDIDATE_KEYWORDS} = automation, selenium, robotframework</msg>
+<arg>${CANDIDATE_KEYWORDS}</arg>
+<arg>${json['keywords']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.494446" elapsed="0.002000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-03-26T21:02:34.497446" level="INFO">${CANDIDATE_APPLICATION_DATE} = 2026-03-26</msg>
+<arg>${CANDIDATE_APPLICATION_DATE}</arg>
+<arg>${json['applicationDate']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.496446" elapsed="0.001000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-03-26T21:02:34.498447" level="INFO">${CANDIDATE_NOTE} = Candidate for automation team</msg>
+<arg>${CANDIDATE_NOTE}</arg>
+<arg>${json['note']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.497446" elapsed="0.001001"/>
+</kw>
+<doc>Charge les données du candidat depuis recruitment.json</doc>
+<status status="PASS" start="2026-03-26T21:02:34.485444" elapsed="0.013003"/>
+</kw>
+<kw name="Add Candidate" owner="recruitmentPage">
+<kw name="Open Recruitment Page" owner="recruitmentPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[text()='Recruitment']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T21:02:34.499447" elapsed="1.649052"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:36.148499" level="INFO">Clicking element 'xpath=//span[text()='Recruitment']'.</msg>
+<arg>xpath=//span[text()='Recruitment']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:36.148499" elapsed="1.468694"/>
+</kw>
+<doc>Ouvre la page de recrutement</doc>
+<status status="PASS" start="2026-03-26T21:02:34.499447" elapsed="3.117746"/>
+</kw>
+<kw name="Fill Candidate Form" owner="recruitmentPage">
+<kw name="Open Recruitment Page" owner="recruitmentPage">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[text()='Recruitment']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T21:02:37.618194" elapsed="0.430862"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:38.050058" level="INFO">Clicking element 'xpath=//span[text()='Recruitment']'.</msg>
+<arg>xpath=//span[text()='Recruitment']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:38.049056" elapsed="2.023283"/>
+</kw>
+<doc>Ouvre la page de recrutement</doc>
+<status status="PASS" start="2026-03-26T21:02:37.618194" elapsed="2.454145"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(.,'Add')]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T21:02:40.072339" elapsed="0.624379"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(.,'Add')]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2026-03-26T21:02:40.697719" elapsed="0.275604"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:40.974323" level="INFO">Clicking element 'xpath=//button[contains(.,'Add')]'.</msg>
+<arg>xpath=//button[contains(.,'Add')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:40.973323" elapsed="1.145636"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>name=firstName</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T21:02:42.118959" elapsed="0.831052"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:42.951012" level="INFO">Typing text 'Johny' into text field 'name=firstName'.</msg>
+<arg>name=firstName</arg>
+<arg>${CANDIDATE_FIRST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:42.950011" elapsed="0.041010"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:42.992021" level="INFO">Typing text 'J' into text field 'name=middleName'.</msg>
+<arg>name=middleName</arg>
+<arg>${CANDIDATE_MIDDLE_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:42.991021" elapsed="0.042009"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:43.033030" level="INFO">Typing text 'John' into text field 'name=lastName'.</msg>
+<arg>name=lastName</arg>
+<arg>${CANDIDATE_LAST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:43.033030" elapsed="0.041010"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:43.075039" level="INFO">Clicking element 'xpath=//label[text()='Vacancy']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]'.</msg>
+<arg>xpath=//label[text()='Vacancy']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:43.075039" elapsed="0.035008"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@role='listbox']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T21:02:43.110047" elapsed="0.010002"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@role='listbox']//*[contains(text(),'${CANDIDATE_JOB_TITLE}')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T21:02:43.120049" elapsed="0.626350"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:43.747399" level="INFO">Clicking element 'xpath=//div[@role='listbox']//*[contains(text(),'Junior Account Assistant')]'.</msg>
+<arg>xpath=//div[@role='listbox']//*[contains(text(),'${CANDIDATE_JOB_TITLE}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:43.746399" elapsed="0.036794"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:43.783703" level="INFO">Typing text 'johny.john@example.com' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[3]/div/div[1]/div/div[2]/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[3]/div/div[1]/div/div[2]/input</arg>
+<arg>${CANDIDATE_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:43.783193" elapsed="0.064940"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:43.849316" level="INFO">Typing text '0601020304' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[3]/div/div[2]/div/div[2]/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[3]/div/div[2]/div/div[2]/input</arg>
+<arg>${CANDIDATE_CONTACT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:43.848133" elapsed="0.048570"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:43.897697" level="INFO">Typing text 'automation, selenium, robotframework' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[5]/div/div[1]/div/div[2]/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[5]/div/div[1]/div/div[2]/input</arg>
+<arg>${CANDIDATE_KEYWORDS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:43.897010" elapsed="0.063050"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:43.961059" level="INFO">Typing text 'Candidate for automation team' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[6]/div/div/div/div[2]/textarea'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[6]/div/div/div/div[2]/textarea</arg>
+<arg>${CANDIDATE_NOTE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:43.960060" elapsed="0.056014"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:44.017075" level="INFO">Clicking element 'xpath=//label[text()='Consent to keep data']/following::i[1]'.</msg>
+<arg>xpath=//label[text()='Consent to keep data']/following::i[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:44.017075" elapsed="0.034007"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:44.051082" level="INFO">Clicking button 'xpath=//button[contains(.,'Save')]'.</msg>
+<arg>xpath=//button[contains(.,'Save')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:44.051082" elapsed="0.043010"/>
+</kw>
+<doc>Remplit le formulaire "Add Candidate" avec tous les champs et soumet</doc>
+<status status="PASS" start="2026-03-26T21:02:37.618194" elapsed="6.475898"/>
+</kw>
+<doc>Remplit le formulaire et envoie le candidat</doc>
+<status status="PASS" start="2026-03-26T21:02:34.498447" elapsed="9.596645"/>
+</kw>
+<kw name="Log Out" owner="userMenu">
+<kw name="Open User Menu" owner="userMenu">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//p[@class='oxd-userdropdown-name']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T21:02:44.096092" elapsed="0.010003"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:44.106095" level="INFO">Clicking element 'xpath=//p[@class='oxd-userdropdown-name']'.</msg>
+<arg>xpath=//p[@class='oxd-userdropdown-name']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:44.106095" elapsed="0.032006"/>
+</kw>
+<doc>Ouvre le menu déroulant utilisateur en haut à droite de l'application.</doc>
+<status status="PASS" start="2026-03-26T21:02:44.095092" elapsed="0.044010"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[text()='Logout']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-26T21:02:44.139102" elapsed="0.218110"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-26T21:02:44.357212" level="INFO">Clicking element 'xpath=//a[text()='Logout']'.</msg>
+<arg>xpath=//a[text()='Logout']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-26T21:02:44.357212" elapsed="1.315164"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//input[@name='username']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-03-26T21:02:45.673357" elapsed="0.415594"/>
+</kw>
+<doc>Permet de se déconnecter de l'application OrangeHRM.</doc>
+<status status="PASS" start="2026-03-26T21:02:44.095092" elapsed="1.993859"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2026-03-26T21:02:46.089951" level="INFO">Fin du test</msg>
+<arg>Fin du test</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-03-26T21:02:46.089951" elapsed="0.000000"/>
+</kw>
+<doc>E2E sur les fonctionnalités liées au recrutement de candidat.</doc>
+<status status="PASS" start="2026-03-26T21:02:33.879034" elapsed="12.211917"/>
+</test>
+<kw name="Close Website" owner="loginPage" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-03-26T21:02:46.093952" elapsed="3.660062"/>
+</kw>
+<doc>Ferme le site OrangeHRM</doc>
+<status status="PASS" start="2026-03-26T21:02:46.093952" elapsed="3.660062"/>
+</kw>
+<status status="PASS" start="2026-03-26T21:02:30.171823" elapsed="19.582191"/>
+</suite>
+<status status="PASS" start="2026-03-26T21:02:30.167822" elapsed="19.590203"/>
+</suite>
+<status status="PASS" start="2026-03-26T21:02:30.158820" elapsed="19.601197"/>
+</suite>
+<status status="PASS" start="2026-03-26T21:02:30.130813" elapsed="19.631205"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="projet tutore MATTHIEU PETTEX" id="s1" pass="1" fail="0" skip="0">projet tutore MATTHIEU PETTEX</stat>
+<stat name="Code" id="s1-s1" pass="1" fail="0" skip="0">projet tutore MATTHIEU PETTEX.Code</stat>
+<stat name="Tests" id="s1-s1-s1" pass="1" fail="0" skip="0">projet tutore MATTHIEU PETTEX.Code.Tests</stat>
+<stat name="test orange HRM" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">projet tutore MATTHIEU PETTEX.Code.Tests.test orange HRM</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

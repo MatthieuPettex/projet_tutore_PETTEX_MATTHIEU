@@ -46,15 +46,12 @@ Log In
     Login Click
 
 New Log In
-    [Documentation]    Change le mot de passe utilisateur avec un nouveau mot de passe fourni.
-    Access Password Change
-    Wait Until Element Is Visible    ${CURRENT_PASSWORD_FIELD}    10s
-
-    Input Text    ${CURRENT_PASSWORD_FIELD}    ${PASSWORD}
-    Input Text    ${NEW_PASSWORD_FIELD}        ${NEW_PASSWORD}
-    Input Text    ${CONFIRM_PASSWORD_FIELD}    ${NEW_PASSWORD}
-
+    [Documentation]    Tente de se connecter avec le nouveau mot de passe.
+    Wait Until Element Is Visible    name=username    10s
+    Input Text    name=username    ${USERNAME}
+    Input Text    name=password    ${NEW_PASSWORD}
     Click Button    xpath=//button[@type='submit']
+    
 
 Close Website
     [Documentation]    Ferme le site OrangeHRM

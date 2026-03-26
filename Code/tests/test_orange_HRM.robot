@@ -2,6 +2,7 @@
 Resource         ../pages/loginPage.resource
 Resource         ../pages/userMenu.resource
 Resource         ../pages/upgradePage.resource
+Resource          ../pages/recruitmentPage.resource
 
 Suite Setup      Open Website
 Suite Teardown    Close Website
@@ -10,27 +11,14 @@ Test Teardown    Log    Fin du test
 
 *** Test Cases ***
 Test Reconnexion Avec Nouveau Mot De Passe Echoue
-    [Documentation]    Vérifie que la reconnexion avec le nouveau mot de passe échoue et test les fonctionnalités du menu utilisateur (comportement attendu du site de démo)
-
-    # Connexion initiale
+    [Documentation]    Vérifie que la reconnexion avec le nouveau mot de passe échoue et test les fonctionnalités du menu utilisateur
     Log In
-    
     Wait Until Page Contains    Dashboard    10s
-
-    # Tests des différentes pages liées au menu utilisateur
     User Menu Full
-    
-    # Changement du mot de passe
     Password Change
-
-    # Déconnexion
     Log Out
-
     # Tentative de reconnexion avec le nouveau mot de passe
-    Wait Until Element Is Visible    name=username    10s
-    Input Text    name=username    ${USERNAME}
-    Input Text    name=password    ${NEW_PASSWORD}
-    Click Button    xpath=//button[@type='submit']
+    New Log In
 
     # Vérification de l'échec
     Wait Until Page Contains    Invalid credentials    10s
@@ -45,9 +33,18 @@ Test Connexion Invalide
     Wait Until Page Contains    Invalid credentials    10s
 
 Test Upgrade
-    [Documentation]    Test de la foncionnalité upgrade du site.
+    [Documentation]    Test de la fonctionnalité upgrade du site.
     Log In
     Upgrade Page Access
     Fill Form
     Submit Form
     Verify Submit
+
+Test Recruitment
+    [Documentation]    E2E sur les fonctionnalités liées au recrutement de candidat.
+    Log In
+    Load Candidate Data
+    Add Candidate
+    #See Candidate
+    #Delete Candidate
+    Log Out
