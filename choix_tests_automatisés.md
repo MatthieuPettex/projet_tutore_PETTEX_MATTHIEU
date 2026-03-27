@@ -9,8 +9,6 @@ Identifier les tests pertinents à automatiser.
 
 Tests automatisés si :
 - Répétitifs
-- Critiques métier
-- Stables
 - Rapides à exécuter
 
 ---
@@ -22,6 +20,7 @@ Tests automatisés si :
 - Connexion invalide
 
 Pourquoi :
+- Scénario simple
 - Fonction critique
 - Fréquemment utilisée
 
@@ -32,84 +31,77 @@ Pourquoi :
 
 Pourquoi :
 - Scénario simple
-- Important pour sécurité
+- Important pour la sécurité
+- Fréquemment utilisée
 
 ---
 
 ### Menu utilisateur
 
 - About
-- Change Password
 - Logout
 
 Pourquoi :
+- Scénario simple
 - Navigation fréquente
-- Bon candidat UI test
 
 ---
 
-### Mot de passe
+### Modification du mot de passe
 - Accès page Change Password
 - Test négatif (nouveau mot de passe ne fonctionne pas)
 
 Pourquoi :
-- Cas métier intéressant
-- Test négatif important
+- Scénario simple
+- Important pour la sécurité
+- Test négatif important (Détection d'anomalie)
 
 ---
 
-### Formulaire Upgrade
-- Accès page
-- Remplissage formulaire
-- Soumission
+### Création, consultation et suppression d'un candidat
+- Ajout d'un candidat (remplissage d'un formulaire)
+- Consulation du candidat
+- Suppression du candidat
 
 Pourquoi :
-- Cas utilisateur réel
-- Bon test E2E
+- Scénario répétitif
 
 ---
 
-## Tests non automatisés
-
-### Support
-- Ouverture onglet
+### Modification des informations utilisateur
+- Modification des informations du formulaire sur la page My Info
 
 Pourquoi :
-- Gestion multi-onglet complexe
-- Peu critique
-
----
-
-### Vérification visuelle
-- UI / design
-
-Pourquoi :
-- Non fiable en automatisation
-
----
+- Scénario répétitif
 
 ## Stratégie
 
+- Priorité aux tests rapides (peu de temps)
 - Priorité aux tests critiques
-- Tests rapides et stables
-- Couverture fonctionnelle essentielle
 
 ---
 
 ## Résumé
 
-| Type de test        | Automatisé |
-|--------------------|----------|
-| Login              | V        |
-| Logout             | V        |
-| Change Password    | V        |
-| Upgrade Form       | V        |
-| Support            | X        |
+| Type de test       | Automatisé|
+|--------------------|-----------|
+| Login              | V         |
+| About              | V         |
+| Support            | V         |
+| Change Password    | V         |
+| Logout             | V         |
+| Upgrade Form       | X         |
+| Logout             | V         |
+| Recruitment        | V         |
+| Add                | V         |
+| Search             | V         |
+| Consult            | V         |
+| Delete             | V         |
+| My Info            | V         |
 
 ---
 
 ## Améliorations futures
 
-- Ajouter tests API
-- Ajouter tests data-driven
-- Intégration CI/CD
+- Améliorer les xpath (ne pas utilier des xpaths absolus)
+- Rajouter plus de tests pertinents

@@ -1,0 +1,12 @@
+{
+  "firstName": "Alexandre",
+  "middleName": "Pierre",
+  "lastName": "Martin",
+  "employeeId": "20260327",
+  "otherId": "789456",
+  "driversLicenseNumber": "123456789",
+  "licenseExpiryDate": "2028-15-06",
+  "nationality": "French",
+  "maritalStatus": "Single",
+  "dateOfBirth": "1999-11-11"
+}

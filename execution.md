@@ -5,7 +5,7 @@ Présenter les résultats des tests automatisés exécutés avec Robot Framework
 
 ---
 
-## ⚙️ Environnement d’exécution
+## Environnement d’exécution
 
 - Application : OrangeHRM (demo)
 - URL : https://opensource-demo.orangehrmlive.com

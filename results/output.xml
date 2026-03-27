@@ -1,335 +1,498 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.11.8 on win32)" generated="2026-03-26T21:02:30.125812" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.11.8 on win32)" generated="2026-03-27T12:30:01.843370" rpa="false" schemaversion="5">
 <suite id="s1" name="projet tutore MATTHIEU PETTEX" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX">
 <suite id="s1-s1" name="Code" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX\Code">
 <suite id="s1-s1-s1" name="Tests" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX\Code\tests">
 <suite id="s1-s1-s1-s1" name="test orange HRM" source="C:\Users\matpe\AppData\Local\ProjetFinalM2I\projet_tutore_MATTHIEU_PETTEX\Code\tests\test_orange_HRM.robot">
 <kw name="Open Website" owner="loginPage" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:30.398873" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg time="2026-03-27T12:30:02.126434" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-03-26T21:02:30.398873" elapsed="3.453156"/>
+<status status="PASS" start="2026-03-27T12:30:02.126434" elapsed="5.416794"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-03-26T21:02:33.852029" elapsed="0.026006"/>
+<status status="PASS" start="2026-03-27T12:30:07.544227" elapsed="0.024625"/>
 </kw>
 <doc>Ouvre le navigateur et se rend sur le site OrangeHRM puis met la fenêtre en grand</doc>
-<status status="PASS" start="2026-03-26T21:02:30.397874" elapsed="3.480161"/>
+<status status="PASS" start="2026-03-27T12:30:02.125434" elapsed="5.444418"/>
 </kw>
-<test id="s1-s1-s1-s1-t1" name="Test Recruitment" line="43">
+<test id="s1-s1-s1-s1-t1" name="Test TC08 E2E Myinfo" line="74">
 <kw name="Log" owner="BuiltIn" type="SETUP">
-<msg time="2026-03-26T21:02:33.882036" level="INFO">Début du test</msg>
+<msg time="2026-03-27T12:30:07.573853" level="INFO">Début du test</msg>
 <arg>Début du test</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-03-26T21:02:33.882036" elapsed="0.000000"/>
+<status status="PASS" start="2026-03-27T12:30:07.572852" elapsed="0.001001"/>
 </kw>
 <kw name="Log In" owner="loginPage">
 <kw name="Load User Data" owner="loginPage">
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2026-03-26T21:02:33.884036" level="INFO">${json} = {'username': 'Admin', 'password': 'admin123'}</msg>
+<msg time="2026-03-27T12:30:07.574853" level="INFO">${json} = {'username': 'Admin', 'password': 'admin123'}</msg>
 <var>${json}</var>
 <arg>C:\\Users\\matpe\\AppData\\Local\\ProjetFinalM2I\\projet_tutore_MATTHIEU_PETTEX\\Code\\pages/../data/users.json</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2026-03-26T21:02:33.883036" elapsed="0.001000"/>
+<status status="PASS" start="2026-03-27T12:30:07.574853" elapsed="0.001001"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2026-03-26T21:02:33.899039" level="INFO">${username} = ['Admin']</msg>
+<msg time="2026-03-27T12:30:07.590856" level="INFO">${username} = ['Admin']</msg>
 <var>${username}</var>
 <arg>${json}</arg>
 <arg>$.username</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2026-03-26T21:02:33.884036" elapsed="0.016003"/>
+<status status="PASS" start="2026-03-27T12:30:07.575854" elapsed="0.015002"/>
 </kw>
 <kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2026-03-26T21:02:33.912045" level="INFO">${password} = ['admin123']</msg>
+<msg time="2026-03-27T12:30:07.603860" level="INFO">${password} = ['admin123']</msg>
 <var>${password}</var>
 <arg>${json}</arg>
 <arg>$.password</arg>
 <doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2026-03-26T21:02:33.900039" elapsed="0.013006"/>
+<status status="PASS" start="2026-03-27T12:30:07.591857" elapsed="0.012003"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-26T21:02:33.914045" level="INFO">${USERNAME} = Admin</msg>
+<msg time="2026-03-27T12:30:07.604859" level="INFO">${USERNAME} = Admin</msg>
 <arg>${USERNAME}</arg>
 <arg>${username[0]}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-26T21:02:33.913045" elapsed="0.001000"/>
+<status status="PASS" start="2026-03-27T12:30:07.603860" elapsed="0.000999"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-26T21:02:33.915045" level="INFO">${PASSWORD} = admin123</msg>
+<msg time="2026-03-27T12:30:07.605859" level="INFO">${PASSWORD} = admin123</msg>
 <arg>${PASSWORD}</arg>
 <arg>${password[0]}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-26T21:02:33.914045" elapsed="0.001000"/>
+<status status="PASS" start="2026-03-27T12:30:07.605859" elapsed="0.000000"/>
 </kw>
 <doc>Charge les données utilisateurs depuis users.json</doc>
-<status status="PASS" start="2026-03-26T21:02:33.883036" elapsed="0.032009"/>
+<status status="PASS" start="2026-03-27T12:30:07.573853" elapsed="0.033006"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>name=username</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-26T21:02:33.915045" elapsed="0.424361"/>
+<status status="PASS" start="2026-03-27T12:30:07.606859" elapsed="1.048967"/>
 </kw>
 <kw name="Username Input" owner="loginPage">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:34.340407" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
+<msg time="2026-03-27T12:30:08.656826" level="INFO">Typing text 'Admin' into text field 'name=username'.</msg>
 <arg>name=username</arg>
 <arg>${USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.340407" elapsed="0.046011"/>
+<status status="PASS" start="2026-03-27T12:30:08.656826" elapsed="0.042010"/>
 </kw>
 <doc>Insere le nom d'utilisateur dans le champ de connexion</doc>
-<status status="PASS" start="2026-03-26T21:02:34.339406" elapsed="0.047012"/>
+<status status="PASS" start="2026-03-27T12:30:08.655826" elapsed="0.044010"/>
 </kw>
 <kw name="Password Input" owner="loginPage">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:34.387418" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
+<msg time="2026-03-27T12:30:08.700836" level="INFO">Typing text 'admin123' into text field 'name=password'.</msg>
 <arg>name=password</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.387418" elapsed="0.046014"/>
+<status status="PASS" start="2026-03-27T12:30:08.699836" elapsed="0.047011"/>
 </kw>
 <doc>Insere le mot de passe dans le champ de connexion</doc>
-<status status="PASS" start="2026-03-26T21:02:34.386418" elapsed="0.047014"/>
+<status status="PASS" start="2026-03-27T12:30:08.699836" elapsed="0.047011"/>
 </kw>
 <kw name="Login Click" owner="loginPage">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:34.434432" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<msg time="2026-03-27T12:30:08.747846" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
 <arg>xpath=//button[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.434432" elapsed="0.050012"/>
+<status status="PASS" start="2026-03-27T12:30:08.747846" elapsed="0.050012"/>
 </kw>
 <doc>Clique sur le bouton pour se connecter</doc>
-<status status="PASS" start="2026-03-26T21:02:34.433432" elapsed="0.052012"/>
+<status status="PASS" start="2026-03-27T12:30:08.746847" elapsed="0.051011"/>
 </kw>
 <doc>Execute les étapes de connexion</doc>
-<status status="PASS" start="2026-03-26T21:02:33.883036" elapsed="0.602408"/>
+<status status="PASS" start="2026-03-27T12:30:07.573853" elapsed="1.225005"/>
 </kw>
-<kw name="Load Candidate Data" owner="recruitmentPage">
+<kw name="Load Myinfo Data" owner="myinfoPage">
 <kw name="Load Json From File" owner="JSONLibrary">
-<msg time="2026-03-26T21:02:34.486444" level="INFO">${json} = {'firstName': 'Johny', 'middleName': 'J', 'lastName': 'John', 'jobTitle': 'Junior Account Assistant', 'email': 'johny.john@example.com', 'contact': '0601020304', 'keywords': 'automation, selenium, rob...</msg>
+<msg time="2026-03-27T12:30:08.799858" level="INFO">${json} = {'firstName': 'Alexandre', 'middleName': 'Pierre', 'lastName': 'Martin', 'employeeId': '20260327', 'otherId': '789456', 'driversLicenseNumber': '123456789', 'licenseExpiryDate': '2028-15-06', 'nationa...</msg>
 <var>${json}</var>
-<arg>C:\\Users\\matpe\\AppData\\Local\\ProjetFinalM2I\\projet_tutore_MATTHIEU_PETTEX\\Code\\pages/../data/recruitment.json</arg>
+<arg>C:\\Users\\matpe\\AppData\\Local\\ProjetFinalM2I\\projet_tutore_MATTHIEU_PETTEX\\Code\\pages/../data/myinfo.json</arg>
 <doc>Load JSON from file.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.486444" elapsed="0.000000"/>
+<status status="PASS" start="2026-03-27T12:30:08.799858" elapsed="0.000000"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-26T21:02:34.487444" level="INFO">${CANDIDATE_FIRST_NAME} = Johny</msg>
-<arg>${CANDIDATE_FIRST_NAME}</arg>
+<msg time="2026-03-27T12:30:08.801858" level="INFO">${FIRST_NAME} = Alexandre</msg>
+<arg>${FIRST_NAME}</arg>
 <arg>${json['firstName']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.486444" elapsed="0.002000"/>
+<status status="PASS" start="2026-03-27T12:30:08.799858" elapsed="0.002000"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-26T21:02:34.489444" level="INFO">${CANDIDATE_MIDDLE_NAME} = J</msg>
-<arg>${CANDIDATE_MIDDLE_NAME}</arg>
+<msg time="2026-03-27T12:30:08.802859" level="INFO">${MIDDLE_NAME} = Pierre</msg>
+<arg>${MIDDLE_NAME}</arg>
 <arg>${json['middleName']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.488444" elapsed="0.001000"/>
+<status status="PASS" start="2026-03-27T12:30:08.801858" elapsed="0.001001"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-26T21:02:34.490445" level="INFO">${CANDIDATE_LAST_NAME} = John</msg>
-<arg>${CANDIDATE_LAST_NAME}</arg>
+<msg time="2026-03-27T12:30:08.804859" level="INFO">${LAST_NAME} = Martin</msg>
+<arg>${LAST_NAME}</arg>
 <arg>${json['lastName']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.489444" elapsed="0.001001"/>
+<status status="PASS" start="2026-03-27T12:30:08.803859" elapsed="0.001000"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-26T21:02:34.491445" level="INFO">${CANDIDATE_JOB_TITLE} = Junior Account Assistant</msg>
-<arg>${CANDIDATE_JOB_TITLE}</arg>
-<arg>${json['jobTitle']}</arg>
+<msg time="2026-03-27T12:30:08.805860" level="INFO">${EMPLOYEE_ID} = 20260327</msg>
+<arg>${EMPLOYEE_ID}</arg>
+<arg>${json['employeeId']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.490445" elapsed="0.001000"/>
+<status status="PASS" start="2026-03-27T12:30:08.804859" elapsed="0.001001"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-26T21:02:34.492445" level="INFO">${CANDIDATE_EMAIL} = johny.john@example.com</msg>
-<arg>${CANDIDATE_EMAIL}</arg>
-<arg>${json['email']}</arg>
+<msg time="2026-03-27T12:30:08.807860" level="INFO">${OTHER_ID} = 789456</msg>
+<arg>${OTHER_ID}</arg>
+<arg>${json['otherId']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.491445" elapsed="0.001000"/>
+<status status="PASS" start="2026-03-27T12:30:08.806860" elapsed="0.001000"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-26T21:02:34.494446" level="INFO">${CANDIDATE_CONTACT} = 0601020304</msg>
-<arg>${CANDIDATE_CONTACT}</arg>
-<arg>${json['contact']}</arg>
+<msg time="2026-03-27T12:30:08.808860" level="INFO">${DRIVER_LICENSE} = 123456789</msg>
+<arg>${DRIVER_LICENSE}</arg>
+<arg>${json['driversLicenseNumber']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.493446" elapsed="0.001000"/>
+<status status="PASS" start="2026-03-27T12:30:08.807860" elapsed="0.001000"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-26T21:02:34.495446" level="INFO">${CANDIDATE_KEYWORDS} = automation, selenium, robotframework</msg>
-<arg>${CANDIDATE_KEYWORDS}</arg>
-<arg>${json['keywords']}</arg>
+<msg time="2026-03-27T12:30:08.809861" level="INFO">${LICENSE_EXPIRY} = 2028-15-06</msg>
+<arg>${LICENSE_EXPIRY}</arg>
+<arg>${json['licenseExpiryDate']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.494446" elapsed="0.002000"/>
+<status status="PASS" start="2026-03-27T12:30:08.808860" elapsed="0.001001"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-26T21:02:34.497446" level="INFO">${CANDIDATE_APPLICATION_DATE} = 2026-03-26</msg>
-<arg>${CANDIDATE_APPLICATION_DATE}</arg>
-<arg>${json['applicationDate']}</arg>
+<msg time="2026-03-27T12:30:08.810861" level="INFO">${NATIONALITY} = French</msg>
+<arg>${NATIONALITY}</arg>
+<arg>${json['nationality']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.496446" elapsed="0.001000"/>
+<status status="PASS" start="2026-03-27T12:30:08.809861" elapsed="0.001000"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2026-03-26T21:02:34.498447" level="INFO">${CANDIDATE_NOTE} = Candidate for automation team</msg>
-<arg>${CANDIDATE_NOTE}</arg>
-<arg>${json['note']}</arg>
+<msg time="2026-03-27T12:30:08.812861" level="INFO">${MARITAL_STATUS} = Single</msg>
+<arg>${MARITAL_STATUS}</arg>
+<arg>${json['maritalStatus']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.497446" elapsed="0.001001"/>
+<status status="PASS" start="2026-03-27T12:30:08.811861" elapsed="0.001000"/>
 </kw>
-<doc>Charge les données du candidat depuis recruitment.json</doc>
-<status status="PASS" start="2026-03-26T21:02:34.485444" elapsed="0.013003"/>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-03-27T12:30:08.813862" level="INFO">${DOB} = 1999-11-11</msg>
+<arg>${DOB}</arg>
+<arg>${json['dateOfBirth']}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-03-27T12:30:08.812861" elapsed="0.001001"/>
 </kw>
-<kw name="Add Candidate" owner="recruitmentPage">
-<kw name="Open Recruitment Page" owner="recruitmentPage">
+<doc>Charge les données employé depuis myinfo.json</doc>
+<status status="PASS" start="2026-03-27T12:30:08.798858" elapsed="0.015004"/>
+</kw>
+<kw name="Fill Myinfo Form" owner="myinfoPage">
+<kw name="Open Myinfo Page" owner="myinfoPage">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//span[text()='Recruitment']</arg>
+<arg>xpath=//span[text()='My Info']</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-26T21:02:34.499447" elapsed="1.649052"/>
+<status status="PASS" start="2026-03-27T12:30:08.814862" elapsed="3.112328"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:36.148499" level="INFO">Clicking element 'xpath=//span[text()='Recruitment']'.</msg>
-<arg>xpath=//span[text()='Recruitment']</arg>
+<msg time="2026-03-27T12:30:11.928190" level="INFO">Clicking element 'xpath=//span[text()='My Info']'.</msg>
+<arg>xpath=//span[text()='My Info']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:36.148499" elapsed="1.468694"/>
+<status status="PASS" start="2026-03-27T12:30:11.928190" elapsed="2.497113"/>
 </kw>
-<doc>Ouvre la page de recrutement</doc>
-<status status="PASS" start="2026-03-26T21:02:34.499447" elapsed="3.117746"/>
-</kw>
-<kw name="Fill Candidate Form" owner="recruitmentPage">
-<kw name="Open Recruitment Page" owner="recruitmentPage">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//span[text()='Recruitment']</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-26T21:02:37.618194" elapsed="0.430862"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:38.050058" level="INFO">Clicking element 'xpath=//span[text()='Recruitment']'.</msg>
-<arg>xpath=//span[text()='Recruitment']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:38.049056" elapsed="2.023283"/>
-</kw>
-<doc>Ouvre la page de recrutement</doc>
-<status status="PASS" start="2026-03-26T21:02:37.618194" elapsed="2.454145"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//button[contains(.,'Add')]</arg>
-<arg>15s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-26T21:02:40.072339" elapsed="0.624379"/>
-</kw>
-<kw name="Scroll Element Into View" owner="SeleniumLibrary">
-<arg>xpath=//button[contains(.,'Add')]</arg>
-<doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" start="2026-03-26T21:02:40.697719" elapsed="0.275604"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:40.974323" level="INFO">Clicking element 'xpath=//button[contains(.,'Add')]'.</msg>
-<arg>xpath=//button[contains(.,'Add')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:40.973323" elapsed="1.145636"/>
+<doc>Ouvre la page des détails personnels d’un employé</doc>
+<status status="PASS" start="2026-03-27T12:30:08.814862" elapsed="5.610441"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>name=firstName</arg>
-<arg>10s</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-26T21:02:42.118959" elapsed="0.831052"/>
+<status status="PASS" start="2026-03-27T12:30:14.425303" elapsed="0.860676"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-27T12:30:20.287276" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-27T12:30:15.285979" elapsed="5.001297"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:20.288276" level="INFO">Clicking element 'name=firstName'.</msg>
+<arg>name=firstName</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:20.287276" elapsed="0.038009"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:20.326285" level="INFO">Sending key(s) ('CTRL+A+BACKSPACE',) to name=firstName element.</msg>
+<msg time="2026-03-27T12:30:20.617275" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2026-03-27T12:30:20.617275" level="INFO">Sending key A</msg>
+<msg time="2026-03-27T12:30:20.617275" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg time="2026-03-27T12:30:20.617275" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2026-03-27T12:30:20.618275" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>name=firstName</arg>
+<arg>CTRL+A+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-03-27T12:30:20.325285" elapsed="0.299992"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:42.951012" level="INFO">Typing text 'Johny' into text field 'name=firstName'.</msg>
+<msg time="2026-03-27T12:30:20.625277" level="INFO">Typing text 'Alexandre' into text field 'name=firstName'.</msg>
 <arg>name=firstName</arg>
-<arg>${CANDIDATE_FIRST_NAME}</arg>
+<arg>${FIRST_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:42.950011" elapsed="0.041010"/>
+<status status="PASS" start="2026-03-27T12:30:20.625277" elapsed="0.037008"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:42.992021" level="INFO">Typing text 'J' into text field 'name=middleName'.</msg>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:20.663285" level="INFO">Clicking element 'name=middleName'.</msg>
 <arg>name=middleName</arg>
-<arg>${CANDIDATE_MIDDLE_NAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:42.991021" elapsed="0.042009"/>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:20.662285" elapsed="0.037009"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:20.700294" level="INFO">Sending key(s) ('CTRL+A+BACKSPACE',) to name=middleName element.</msg>
+<msg time="2026-03-27T12:30:20.985764" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2026-03-27T12:30:20.985764" level="INFO">Sending key A</msg>
+<msg time="2026-03-27T12:30:20.985764" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg time="2026-03-27T12:30:20.985764" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2026-03-27T12:30:20.985764" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>name=middleName</arg>
+<arg>CTRL+A+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-03-27T12:30:20.700294" elapsed="0.292472"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:43.033030" level="INFO">Typing text 'John' into text field 'name=lastName'.</msg>
-<arg>name=lastName</arg>
-<arg>${CANDIDATE_LAST_NAME}</arg>
+<msg time="2026-03-27T12:30:20.993766" level="INFO">Typing text 'Pierre' into text field 'name=middleName'.</msg>
+<arg>name=middleName</arg>
+<arg>${MIDDLE_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:43.033030" elapsed="0.041010"/>
+<status status="PASS" start="2026-03-27T12:30:20.992766" elapsed="0.034007"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:43.075039" level="INFO">Clicking element 'xpath=//label[text()='Vacancy']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]'.</msg>
-<arg>xpath=//label[text()='Vacancy']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]</arg>
+<msg time="2026-03-27T12:30:21.027774" level="INFO">Clicking element 'name=lastName'.</msg>
+<arg>name=lastName</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:43.075039" elapsed="0.035008"/>
+<status status="PASS" start="2026-03-27T12:30:21.026773" elapsed="0.037524"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:21.064297" level="INFO">Sending key(s) ('CTRL+A+BACKSPACE',) to name=lastName element.</msg>
+<msg time="2026-03-27T12:30:21.352996" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2026-03-27T12:30:21.352996" level="INFO">Sending key A</msg>
+<msg time="2026-03-27T12:30:21.352996" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg time="2026-03-27T12:30:21.353995" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2026-03-27T12:30:21.353995" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>name=lastName</arg>
+<arg>CTRL+A+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-03-27T12:30:21.064297" elapsed="0.296700"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:21.360997" level="INFO">Typing text 'Martin' into text field 'name=lastName'.</msg>
+<arg>name=lastName</arg>
+<arg>${LAST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:21.360997" elapsed="0.036009"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:21.397006" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[1]/div[1]/div/div[2]/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[1]/div[1]/div/div[2]/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:21.397006" elapsed="0.042594"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:21.440601" level="INFO">Sending key(s) ('CTRL+A+BACKSPACE',) to //*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[1]/div[1]/div/div[2]/input element.</msg>
+<msg time="2026-03-27T12:30:21.705279" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2026-03-27T12:30:21.706279" level="INFO">Sending key A</msg>
+<msg time="2026-03-27T12:30:21.706279" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg time="2026-03-27T12:30:21.706279" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2026-03-27T12:30:21.706279" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[1]/div[1]/div/div[2]/input</arg>
+<arg>CTRL+A+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-03-27T12:30:21.440601" elapsed="0.271680"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:21.713281" level="INFO">Typing text '20260327' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[1]/div[1]/div/div[2]/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[1]/div[1]/div/div[2]/input</arg>
+<arg>${EMPLOYEE_ID}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:21.713281" elapsed="0.032006"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:21.746288" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[1]/div[2]/div/div[2]/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[1]/div[2]/div/div[2]/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:21.746288" elapsed="0.036009"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:21.783296" level="INFO">Sending key(s) ('CTRL+A+BACKSPACE',) to //*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[1]/div[2]/div/div[2]/input element.</msg>
+<msg time="2026-03-27T12:30:22.058273" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2026-03-27T12:30:22.058273" level="INFO">Sending key A</msg>
+<msg time="2026-03-27T12:30:22.058273" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg time="2026-03-27T12:30:22.059274" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2026-03-27T12:30:22.059274" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[1]/div[2]/div/div[2]/input</arg>
+<arg>CTRL+A+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-03-27T12:30:21.782297" elapsed="0.282978"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:22.065275" level="INFO">Typing text '789456' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[1]/div[2]/div/div[2]/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[1]/div[2]/div/div[2]/input</arg>
+<arg>${OTHER_ID}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:22.065275" elapsed="0.032008"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:22.098282" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[2]/div[1]/div/div[2]/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[2]/div[1]/div/div[2]/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:22.097283" elapsed="0.037007"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:22.135290" level="INFO">Sending key(s) ('CTRL+A+BACKSPACE',) to //*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[2]/div[1]/div/div[2]/input element.</msg>
+<msg time="2026-03-27T12:30:22.410546" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2026-03-27T12:30:22.410546" level="INFO">Sending key A</msg>
+<msg time="2026-03-27T12:30:22.410546" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg time="2026-03-27T12:30:22.410546" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2026-03-27T12:30:22.410546" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[2]/div[1]/div/div[2]/input</arg>
+<arg>CTRL+A+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-03-27T12:30:22.134290" elapsed="0.283260"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:22.417550" level="INFO">Typing text '123456789' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[2]/div[1]/div/div[2]/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[2]/div[1]/div/div[2]/input</arg>
+<arg>${DRIVER_LICENSE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:22.417550" elapsed="0.033010"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:22.451560" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[2]/div[2]/div/div[2]/div/div/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[2]/div[2]/div/div[2]/div/div/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:22.451560" elapsed="0.045010"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:22.496570" level="INFO">Sending key(s) ('CTRL+A+BACKSPACE',) to //*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[2]/div[2]/div/div[2]/div/div/input element.</msg>
+<msg time="2026-03-27T12:30:22.775961" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2026-03-27T12:30:22.775961" level="INFO">Sending key A</msg>
+<msg time="2026-03-27T12:30:22.775961" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg time="2026-03-27T12:30:22.775961" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2026-03-27T12:30:22.775961" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[2]/div[2]/div/div[2]/div/div/input</arg>
+<arg>CTRL+A+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-03-27T12:30:22.496570" elapsed="0.285392"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:22.781962" level="INFO">Typing text '2028-15-06' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[2]/div[2]/div/div[2]/div/div/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[2]/div[2]/div[2]/div/div[2]/div/div/input</arg>
+<arg>${LICENSE_EXPIRY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:22.781962" elapsed="0.034008"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[1]/div[1]/div/div[2]/div/div</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-27T12:30:22.816970" elapsed="0.010002"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:22.827973" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[1]/div[1]/div/div[2]/div/div'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[1]/div[1]/div/div[2]/div/div</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:22.827973" elapsed="0.042459"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>xpath=//div[@role='listbox']</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-26T21:02:43.110047" elapsed="0.010002"/>
+<status status="PASS" start="2026-03-27T12:30:22.870432" elapsed="0.016004"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//div[@role='listbox']//*[contains(text(),'${CANDIDATE_JOB_TITLE}')]</arg>
+<arg>xpath=//div[@role='listbox']//*[contains(text(),'${NATIONALITY}')]</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-26T21:02:43.120049" elapsed="0.626350"/>
+<status status="PASS" start="2026-03-27T12:30:22.887437" elapsed="0.011002"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:43.747399" level="INFO">Clicking element 'xpath=//div[@role='listbox']//*[contains(text(),'Junior Account Assistant')]'.</msg>
-<arg>xpath=//div[@role='listbox']//*[contains(text(),'${CANDIDATE_JOB_TITLE}')]</arg>
+<msg time="2026-03-27T12:30:22.898439" level="INFO">Clicking element 'xpath=//div[@role='listbox']//*[contains(text(),'French')]'.</msg>
+<arg>xpath=//div[@role='listbox']//*[contains(text(),'${NATIONALITY}')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:43.746399" elapsed="0.036794"/>
+<status status="PASS" start="2026-03-27T12:30:22.898439" elapsed="0.037008"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:43.783703" level="INFO">Typing text 'johny.john@example.com' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[3]/div/div[1]/div/div[2]/input'.</msg>
-<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[3]/div/div[1]/div/div[2]/input</arg>
-<arg>${CANDIDATE_EMAIL}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:43.783193" elapsed="0.064940"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:43.849316" level="INFO">Typing text '0601020304' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[3]/div/div[2]/div/div[2]/input'.</msg>
-<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[3]/div/div[2]/div/div[2]/input</arg>
-<arg>${CANDIDATE_CONTACT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:43.848133" elapsed="0.048570"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:43.897697" level="INFO">Typing text 'automation, selenium, robotframework' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[5]/div/div[1]/div/div[2]/input'.</msg>
-<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[5]/div/div[1]/div/div[2]/input</arg>
-<arg>${CANDIDATE_KEYWORDS}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:43.897010" elapsed="0.063050"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:43.961059" level="INFO">Typing text 'Candidate for automation team' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[6]/div/div/div/div[2]/textarea'.</msg>
-<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/form/div[6]/div/div/div/div[2]/textarea</arg>
-<arg>${CANDIDATE_NOTE}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:43.960060" elapsed="0.056014"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[1]/div[2]/div/div[2]/div/div/div[1]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-27T12:30:22.935447" elapsed="0.011002"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:44.017075" level="INFO">Clicking element 'xpath=//label[text()='Consent to keep data']/following::i[1]'.</msg>
-<arg>xpath=//label[text()='Consent to keep data']/following::i[1]</arg>
+<msg time="2026-03-27T12:30:22.947450" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[1]/div[2]/div/div[2]/div/div/div[1]'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[1]/div[2]/div/div[2]/div/div/div[1]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:44.017075" elapsed="0.034007"/>
+<status status="PASS" start="2026-03-27T12:30:22.947450" elapsed="0.226796"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@role='listbox']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-27T12:30:23.175248" elapsed="0.008001"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@role='listbox']//*[contains(text(),'${MARITAL_STATUS}')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-03-27T12:30:23.183249" elapsed="0.010001"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:23.194252" level="INFO">Clicking element 'xpath=//div[@role='listbox']//*[contains(text(),'Single')]'.</msg>
+<arg>xpath=//div[@role='listbox']//*[contains(text(),'${MARITAL_STATUS}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:23.193250" elapsed="0.033008"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:23.227259" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[2]/div[1]/div/div[2]/div/div/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[2]/div[1]/div/div[2]/div/div/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:23.227259" elapsed="0.048011"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:23.276271" level="INFO">Sending key(s) ('CTRL+A+BACKSPACE',) to //*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[2]/div[1]/div/div[2]/div/div/input element.</msg>
+<msg time="2026-03-27T12:30:23.562250" level="INFO">Pressing special key CONTROL down.</msg>
+<msg time="2026-03-27T12:30:23.562250" level="INFO">Sending key A</msg>
+<msg time="2026-03-27T12:30:23.562250" level="INFO">Pressing special key BACKSPACE down.</msg>
+<msg time="2026-03-27T12:30:23.562250" level="INFO">Releasing special key CONTROL.</msg>
+<msg time="2026-03-27T12:30:23.562250" level="INFO">Releasing special key BACKSPACE.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[2]/div[1]/div/div[2]/div/div/input</arg>
+<arg>CTRL+A+BACKSPACE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-03-27T12:30:23.276271" elapsed="0.291980"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:23.568251" level="INFO">Typing text '1999-11-11' into text field '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[2]/div[1]/div/div[2]/div/div/input'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[2]/div[1]/div/div[2]/div/div/input</arg>
+<arg>${DOB}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:23.568251" elapsed="0.035008"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-03-27T12:30:23.604259" level="INFO">Clicking element '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/label'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[3]/div[2]/div[2]/div/div[2]/div[1]/div[2]/div/label</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-03-27T12:30:23.603259" elapsed="0.037008"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:44.051082" level="INFO">Clicking button 'xpath=//button[contains(.,'Save')]'.</msg>
-<arg>xpath=//button[contains(.,'Save')]</arg>
+<msg time="2026-03-27T12:30:23.640267" level="INFO">Clicking button '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[5]/button'.</msg>
+<arg>//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[5]/button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:44.051082" elapsed="0.043010"/>
+<status status="PASS" start="2026-03-27T12:30:23.640267" elapsed="0.048012"/>
 </kw>
-<doc>Remplit le formulaire "Add Candidate" avec tous les champs et soumet</doc>
-<status status="PASS" start="2026-03-26T21:02:37.618194" elapsed="6.475898"/>
-</kw>
-<doc>Remplit le formulaire et envoie le candidat</doc>
-<status status="PASS" start="2026-03-26T21:02:34.498447" elapsed="9.596645"/>
+<doc>Remplit le formulaire "Myinfo" avec tous les champs et soumet</doc>
+<status status="PASS" start="2026-03-27T12:30:08.813862" elapsed="14.874417"/>
 </kw>
 <kw name="Log Out" owner="userMenu">
 <kw name="Open User Menu" owner="userMenu">
@@ -337,62 +500,62 @@
 <arg>xpath=//p[@class='oxd-userdropdown-name']</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-26T21:02:44.096092" elapsed="0.010003"/>
+<status status="PASS" start="2026-03-27T12:30:23.689278" elapsed="0.011003"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:44.106095" level="INFO">Clicking element 'xpath=//p[@class='oxd-userdropdown-name']'.</msg>
+<msg time="2026-03-27T12:30:23.701281" level="INFO">Clicking element 'xpath=//p[@class='oxd-userdropdown-name']'.</msg>
 <arg>xpath=//p[@class='oxd-userdropdown-name']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:44.106095" elapsed="0.032006"/>
+<status status="PASS" start="2026-03-27T12:30:23.701281" elapsed="0.034008"/>
 </kw>
 <doc>Ouvre le menu déroulant utilisateur en haut à droite de l'application.</doc>
-<status status="PASS" start="2026-03-26T21:02:44.095092" elapsed="0.044010"/>
+<status status="PASS" start="2026-03-27T12:30:23.689278" elapsed="0.046011"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>xpath=//a[text()='Logout']</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-03-26T21:02:44.139102" elapsed="0.218110"/>
+<status status="PASS" start="2026-03-27T12:30:23.735289" elapsed="0.220251"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-03-26T21:02:44.357212" level="INFO">Clicking element 'xpath=//a[text()='Logout']'.</msg>
+<msg time="2026-03-27T12:30:23.955540" level="INFO">Clicking element 'xpath=//a[text()='Logout']'.</msg>
 <arg>xpath=//a[text()='Logout']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-03-26T21:02:44.357212" elapsed="1.315164"/>
+<status status="PASS" start="2026-03-27T12:30:23.955540" elapsed="1.315697"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>xpath=//input[@name='username']</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2026-03-26T21:02:45.673357" elapsed="0.415594"/>
+<status status="PASS" start="2026-03-27T12:30:25.271237" elapsed="0.830347"/>
 </kw>
 <doc>Permet de se déconnecter de l'application OrangeHRM.</doc>
-<status status="PASS" start="2026-03-26T21:02:44.095092" elapsed="1.993859"/>
+<status status="PASS" start="2026-03-27T12:30:23.688279" elapsed="2.413305"/>
 </kw>
 <kw name="Log" owner="BuiltIn" type="TEARDOWN">
-<msg time="2026-03-26T21:02:46.089951" level="INFO">Fin du test</msg>
+<msg time="2026-03-27T12:30:26.102585" level="INFO">Fin du test</msg>
 <arg>Fin du test</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-03-26T21:02:46.089951" elapsed="0.000000"/>
+<status status="PASS" start="2026-03-27T12:30:26.102585" elapsed="0.000000"/>
 </kw>
-<doc>E2E sur les fonctionnalités liées au recrutement de candidat.</doc>
-<status status="PASS" start="2026-03-26T21:02:33.879034" elapsed="12.211917"/>
+<doc>test de la fonctionnalité de modification des infos utilisateur</doc>
+<status status="PASS" start="2026-03-27T12:30:07.569852" elapsed="18.533733"/>
 </test>
 <kw name="Close Website" owner="loginPage" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-03-26T21:02:46.093952" elapsed="3.660062"/>
+<status status="PASS" start="2026-03-27T12:30:26.107586" elapsed="2.123675"/>
 </kw>
 <doc>Ferme le site OrangeHRM</doc>
-<status status="PASS" start="2026-03-26T21:02:46.093952" elapsed="3.660062"/>
+<status status="PASS" start="2026-03-27T12:30:26.106586" elapsed="2.124675"/>
 </kw>
-<status status="PASS" start="2026-03-26T21:02:30.171823" elapsed="19.582191"/>
+<status status="PASS" start="2026-03-27T12:30:01.882379" elapsed="26.348882"/>
 </suite>
-<status status="PASS" start="2026-03-26T21:02:30.167822" elapsed="19.590203"/>
+<status status="PASS" start="2026-03-27T12:30:01.879379" elapsed="26.355884"/>
 </suite>
-<status status="PASS" start="2026-03-26T21:02:30.158820" elapsed="19.601197"/>
+<status status="PASS" start="2026-03-27T12:30:01.876378" elapsed="26.360885"/>
 </suite>
-<status status="PASS" start="2026-03-26T21:02:30.130813" elapsed="19.631205"/>
+<status status="PASS" start="2026-03-27T12:30:01.847370" elapsed="26.392894"/>
 </suite>
 <statistics>
 <total>

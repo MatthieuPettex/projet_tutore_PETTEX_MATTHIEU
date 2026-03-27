@@ -17,6 +17,7 @@ projet/
         loginPage.resource
         userMenu.resource
         upgradePage.resource
+        recruitmentPage.resource
     data/
         users.json
     results/
@@ -39,16 +40,16 @@ Contient les fichiers `.resource` (keywords réutilisables).
 
 - `loginPage.resource` : gestion de la connexion
 - `userMenu.resource` : actions utilisateur (logout, about, etc.)
-- `upgradePage.resource` : gestion du formulaire Upgrade
-
-Permet une séparation claire entre logique métier et implémentation technique
+- `upgradePage.resource` : gestion du formulaire Upgrade (non utilisé)
+- `recruitmentPage.resource` : gestion des candidats (création, visualisation, suppression)
 
 ---
 
 ### data/
 Contient les données de test.
 
-- `users.json` : identifiants utilisateurs
+- `users.json` : identifiants utilisateurs pour la connexion
+- `recruitment.json` : identifiants candidats
 
 ---
 
@@ -79,13 +80,11 @@ Les actions sont définies sous forme de **keywords** :
 
 Exemple :
 
-
 Log In
 Load User Data
 Input Text username
 Input Text password
 Click Button
-
 
 Avantages :
 - Réutilisabilité

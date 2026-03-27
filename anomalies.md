@@ -105,45 +105,7 @@ Moyenne
 
 ---
 
-## Anomalie 3 – Locators instables
-
-### ID
-BUG-003
-
----
-
-### Description
-Certains éléments ne sont pas trouvés avec XPath.
-
----
-
-### Résultat observé
-- Erreur "Element not found"
-
----
-
-### Résultat attendu
-- Tous les éléments doivent être accessibles
-
----
-
-### Analyse
-- Structure DOM dynamique
-- Utilisation de XPath trop stricts
-
----
-
 ## Conclusion
 
 Les anomalies identifiées sont principalement liées :
 - à l’environnement de démonstration
-- à la structure dynamique du site
-
----
-
-## Recommandations
-
-- Utiliser des locators robustes
-- Ajouter des waits explicites
-- Gérer les popups
-- Vérifier le comportement backend

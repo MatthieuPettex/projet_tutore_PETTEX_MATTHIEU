@@ -28,8 +28,8 @@ Open Recruitment Page
 
 
 Fill Candidate Form
-    Open Recruitment Page
     [Documentation]    Remplit le formulaire "Add Candidate" avec tous les champs et soumet
+    Open Recruitment Page
     Wait Until Element Is Visible    xpath=//button[contains(.,'Add')]    15s
     Scroll Element Into View        xpath=//button[contains(.,'Add')]
     Click Element                   xpath=//button[contains(.,'Add')]
